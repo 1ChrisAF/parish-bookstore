@@ -8,6 +8,7 @@ body {
     font-size: 100%;
     width: 95vw;
     margin: auto;
+    
 }
 header {
     height: 10vh;
@@ -29,22 +30,64 @@ header {
     margin: 3vh;
     font-size: 6vh;
 }
-#navlist {
+a {
+    text-decoration: none;
+    color: black;
+}
+#topNav {
+    float: right;
+    width: 90%;
+    height: 1.5em;
+    margin: 1vh 0;
+   
+    
+}
+#topNav ul {
+    list-style: none;
+    clear: both;
+    margin: auto;
+    margin-left: 30%;
+}
+#topNav ul li {
+    float: left;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: .5vh 5vh;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+#topNav ul li:hover {
+    font-style:italic;
+    cursor: pointer;
+}
+#sideNav {
+    float:left ;
     width: 10%;
     list-style: none;
     padding: 1vh 0;
-    margin: 3vh 0;
+    margin: 5vh 0 0 0;
     background-color: #647C96;
     border-radius: 30px;
 }
-#navlist li {
+.listItem {
     padding: 1vh 2vh;
+    margin: 0 1vh;
+    color: white;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+#lastListItem {
+    padding: 1vh 2vh;
+    margin: 0 1vh;
     color: white;
     text-align: center;
 }
-#navlist li:hover {
+#sideNav li:hover {
     font-weight: bold;
     font-style: italic;
     color: black;
     cursor: pointer;
+}
+footer {
+    clear: both;
 }

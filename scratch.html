@@ -3,23 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="/width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/wwwroot/css/normalize.css">
-    <link rel="stylesheet" href="/wwwroot/css/scratch.css">
+    <link rel="stylesheet" href="wwwroot/css/normalize.css">
+    <link rel="stylesheet" href="wwwroot/css/scratch.css">
 </head>
 <body>
     <header>
-        <img id="headerLeft" src="/wwwroot/media/headerImage.png" alt="cross image">
+        <img id="headerLeft" src="wwwroot/media/headerImage.png" alt="cross image">
         <h2 id="headerRight">St. Anthony Parish Bookstore</h2>
     </header>
     <main>
+        <nav id="topNav">
+            <ul>
+                <li>HOME</li>
+                <li>PARISH SITE</li>
+                <li>AFR STORE</li>
+            </ul>
+        </nav>
         <nav>
-            <ul id="navlist">
-                <li>Books</li>
-                <li>Icons</li>
-                <li>Home Altar</li>
-                <li>Prayer Ropes</li>
-                <li>Gifts</li>
-                <li>Misc.</li>
+            <ul id="sideNav">
+                <li class="listItem">Books</li>
+                <li class="listItem">Icons</li>
+                <li class="listItem">Home Altar</li>
+                <li class="listItem">Prayer Ropes</li>
+                <li class="listItem">Gifts</li>
+                <li id="lastListItem">Misc.</li>
             </ul>
         </nav>
     </main>
