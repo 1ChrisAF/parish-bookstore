@@ -5,16 +5,18 @@ namespace parish_bookstore.Models;
 class Book 
 {
     public int BookId { get; set; }
-    public BookCategory BookCategory {get; set;}
+    public BookCategory Category {get; set;}
     [Required]
-    public string BookTitle {get; set;}
+    public string Title {get; set;}
     [Required]
-    public string BookAuthor {get; set;}
+    public string Author {get; set;}
     [Required]
-    public string BookPublisher {get; set;}
+    public string Publisher {get; set;}
     [Required]
-    public int BookPublishYear {get; set;}
+    public int PublishYear {get; set;}
     [Required]
-    public int BookISBN {get; set;}
-    public string? BookDescription {get; set;}
+    public int ISBN {get; set;}
+    [Required]
+    public decimal Price {get; set;}
+    public string? Description {get; set;}
 }

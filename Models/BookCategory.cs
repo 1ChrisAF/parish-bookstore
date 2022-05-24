@@ -6,5 +6,5 @@ class BookCategory
 {
     public int BookCategoryId {get; set;}
     [Required]
-    public string BookCategoryName {get; set;}
+    public string CategoryName {get; set;}
 }
