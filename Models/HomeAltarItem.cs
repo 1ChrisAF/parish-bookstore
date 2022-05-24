@@ -6,9 +6,9 @@ class HomeAltarItem
 {
     public int HomeAltarItemId {get; set;}
     public HomeAltarItemCategory Category {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Item name is required!")]
     public string Name {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Item price is required!")]
     public decimal Price {get; set;}
     public string? Description {get; set;}
 }

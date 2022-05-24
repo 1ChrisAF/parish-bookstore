@@ -6,17 +6,17 @@ class Book
 {
     public int BookId { get; set; }
     public BookCategory Category {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Book title is required!")]
     public string Title {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Book author is required!")]
     public string Author {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Book publisher is required!")]
     public string Publisher {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Book publish year is required!")]
     public int PublishYear {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Book ISBN is required!")]
     public int ISBN {get; set;}
-    [Required]
+    [Required(ErrorMessage ="Book price is required!")]
     public decimal Price {get; set;}
     public string? Description {get; set;}
 }
