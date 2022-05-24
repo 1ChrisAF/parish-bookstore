@@ -17,6 +17,7 @@ header {
     display: flex;
     align-items: center;
     border: 1px solid black;
+    border-top: none;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
