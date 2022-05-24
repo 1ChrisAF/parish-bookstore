@@ -96,7 +96,7 @@ a {
     color: black;
     cursor: pointer;
 }
-#sideNav li a:visited {
+#sideNav ul li a:visited {
     color: white;
 }
 #mainStage {
