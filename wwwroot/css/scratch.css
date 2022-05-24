@@ -32,7 +32,6 @@ header {
 }
 a {
     text-decoration: none;
-    color: black;
 }
 #topNav {
     float: right;
@@ -50,11 +49,15 @@ a {
 }
 #topNav ul li {
     float: left;
+    color: black;
     font-weight: bold;
     font-size: 1.2em;
     padding: .5vh 5vh;
     border-top: 2px solid black;
     border-bottom: 2px solid black;
+}
+#topNav ul li a:visited {
+    color: black;
 }
 #topNav ul li:hover {
     font-style:italic;
@@ -88,6 +91,10 @@ a {
     color: black;
     cursor: pointer;
 }
+#sideNav li a:visited {
+    color: white;
+}
 footer {
     clear: both;
+    text-align: center;
 }
