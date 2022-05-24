@@ -14,25 +14,31 @@
     </header>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            <nav id="topNav">
-            <ul>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a href="https://stanthonys.nucleus.church/" title="parish website" target="_blank">PARISH SITE</a></li>
-                <li><a href="https://store.ancientfaith.com/" title="ancient faith radio store" target="_blank">AFR STORE</a></li>
-            </ul>
-        </nav>
-        <nav>
-            <ul id="sideNav">
-                <li class="listItem"><a>Books</a></li>
-                <li class="listItem"><a>Icons</a></li>
-                <li class="listItem"><a>Home Altar</a></li>
-                <li class="listItem"><a>Prayer Ropes</a></li>
-                <li class="listItem"><a>Gifts</a></li>
-                <li id="lastListItem"><a>Misc.</a></li>
-            </ul>
-        </nav>
-            @RenderBody()
+        <main role="main">
+            <div id="topNav">
+                <nav>
+                    <ul>
+                        <li>HOME</li>
+                        <li>PARISH SITE</li>
+                        <li>AFR STORE</li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="sideNav">
+                <nav>
+                    <ul>
+                        <li class="listItem">Books</li>
+                        <li class="listItem">Icons</li>
+                        <li class="listItem">Home Altar</li>
+                        <li class="listItem">Prayer Ropes</li>
+                        <li class="listItem">Gifts</li>
+                        <li id="lastListItem">Misc.</li>
+                    </ul>
+                </nav>
+            </div>
+            <div id="mainStage">
+                @RenderBody()
+            </div>
         </main>
     </div>
 
