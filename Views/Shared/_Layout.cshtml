@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - parish_bookstore</title>
+    <title>@ViewData["Title"] - Parish Bookstore</title>
     <link rel="stylesheet" href="~/wwwroot/css/normalize.css">
     <link rel="stylesheet" href="~/css/scratch.css">
 </head>
@@ -28,11 +28,10 @@
                 <nav>
                     <ul>
                         <li class="listItem"><a asp-area="" asp-controller="Book" asp-action="Index">Books</a></li>
-                        <li class="listItem">Icons</li>
-                        <li class="listItem">Home Altar</li>
-                        <li class="listItem">Prayer Ropes</li>
-                        <li class="listItem">Gifts</li>
-                        <li id="lastListItem">Misc.</li>
+                        <li class="listItem"><a asp-area="" asp-controller="Icon" asp-action="Index">Icons</a></li>
+                        <li class="listItem"><a asp-area="" asp-controller="HomeAltarItem" asp-action="Index">Home Altar</a></li>
+                        <li class="listItem"><a asp-area="" asp-controller="PrayerRope" asp-action="Index">Prayer Ropes</a></li>
+                        <li id="lastListItem"><a asp-area="" asp-controller="GeneralItem" asp-action="Index">Misc.</a></li>
                     </ul>
                 </nav>
             </div>

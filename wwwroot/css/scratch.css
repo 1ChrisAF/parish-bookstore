@@ -59,6 +59,9 @@ a {
     border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
+#topNav ul li a{ 
+    color: black;
+}
 #topNav ul li a:visited {
     color: black;
 }
@@ -84,6 +87,9 @@ a {
     color: white;
     text-align: center;
     border-bottom: 2px solid black;
+}
+.listItem a, #lastListItem a {
+    color: white;
 }
 #lastListItem {
     padding: 1vh 2vh;
