@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace parish_bookstore.Models;
 
-class BookstoreContext : DbContext
+public class BookstoreContext : DbContext
 {
     public BookstoreContext() {}
     public BookstoreContext(DbContextOptions<BookstoreContext> options) : base(options)

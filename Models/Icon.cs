@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace parish_bookstore.Models;
 
-class Icon 
+public class Icon 
 {
     public int IconId {get; set;}
     public IconCategory Category {get; set;}

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace parish_bookstore.Models;
 
-class Book 
+public class Book 
 {
     public int BookId { get; set; }
     public BookCategory Category {get; set;}

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace parish_bookstore.Models;
 
-class PrayerRope 
+public class PrayerRope 
 {
     public int PrayerRopeId {get; set;}
     [Required(ErrorMessage ="Knot count is required!")]

@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace parish_bookstore.Models;
 
-class HomeAltarItemCategory
+public class HomeAltarItemCategory
 {
     public int HomeAltarItemCategoryId {get; set;}
     [Required(ErrorMessage ="Category name is required!")]

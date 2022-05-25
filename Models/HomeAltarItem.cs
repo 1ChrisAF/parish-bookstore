@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace parish_bookstore.Models;
 
-class HomeAltarItem 
+public class HomeAltarItem 
 {
     public int HomeAltarItemId {get; set;}
     public HomeAltarItemCategory Category {get; set;}
