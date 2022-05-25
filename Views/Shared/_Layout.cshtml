@@ -16,13 +16,7 @@
     <div class="container">
         <main role="main">
             <div id="topNav">
-                <nav>
-                    <ul>
-                <li><a asp-area="" asp-controller="Home" asp-action="Index">HOME</a></li>
-                <li><a href="https://stanthonys.nucleus.church/" title="parish website" target="_blank">PARISH SITE</a></li>
-                <li><a href="https://store.ancientfaith.com/" title="ancient faith radio store" target="_blank">AFR STORE</a></li>
-                    </ul>
-                </nav>
+                <h2>@ViewData["Header"]</h2>
             </div>
             <div id="sideNav">
                 <nav>
@@ -34,6 +28,14 @@
                         <li id="lastListItem"><a asp-area="" asp-controller="GeneralItem" asp-action="Index">Misc.</a></li>
                     </ul>
                 </nav>
+                <nav id="externalSites">
+                <p>
+                    <a class="externalSitesItem" href="https://stanthonys.nucleus.church/" title="parish website" target="_blank">Parish Site</a>
+                </p>
+                <p>
+                    Can't find what you need for here? <br><a href="https://store.ancientfaith.com/" title="ancient faith radio store" target="_blank" style="color: #545e7e">Check the Ancient Faith Radio Store!</a>
+                </p>
+            </nav>
             </div>
             <div id="mainStage">
                 @RenderBody()

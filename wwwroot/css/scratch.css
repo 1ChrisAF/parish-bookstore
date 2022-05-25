@@ -75,12 +75,13 @@ a {
     cursor: pointer;
 }
 #sideNav {
-    min-width: max-content;
+    
     height: 75vh;
     width: 10%;
     float:left ;
 }
 #sideNav ul {
+    min-width: max-content;
     list-style: none;
     padding: 1vh 0;
     background-color: #647C96;
@@ -111,6 +112,29 @@ a {
 }
 #sideNav ul li a:visited {
     color: white;
+}
+#externalSites {
+    padding-top: 5vh;
+    
+    color: black;
+    text-align: center;
+}
+#externalSites p {
+    padding: 1vh 0;
+    margin: 1vh 0;
+    border: 2px solid black;
+    border-radius: 10px;
+}
+#externalSites a {
+    font-weight: bold;
+    color: black;
+}
+#externalSites a:hover {
+    color: black;
+    font-style: italic;
+}
+#externalSites a:visited {
+    color: black;
 }
 #mainStage {
     height: 75vh;
