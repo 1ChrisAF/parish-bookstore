@@ -13,6 +13,7 @@ body {
 }
 header {
     height: 10vh;
+    min-width: max-content;
     background-color: #647C96;
     display: flex;
     align-items: center;
@@ -70,6 +71,7 @@ a {
     cursor: pointer;
 }
 #sideNav {
+    min-width: max-content;
     height: 75vh;
     width: 10%;
     float:left ;
