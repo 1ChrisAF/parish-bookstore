@@ -18,8 +18,8 @@ public class Book
     [Required(ErrorMessage ="Book ISBN is required!")]
     public int ISBN {get; set;}
     [Required(ErrorMessage ="Book price is required!")]
+    [DataType(DataType.Currency)]
+    [Column(TypeName = "decimal(18,2)")]
     public decimal Price {get; set;}
     public string? Description {get; set;}
-    [NotMapped]
-    public IFormFile Image {get; set;}
 }
