@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "DO9k2qDLxGTEXSK7ts6xyZtjz3194og6l47I4OYkVIQ=",
+  "Hash": "yRggun/0ywUJTdpSKkdZ280wZDkEGnM5SKXM8ocaIm4=",
   "Source": "parish-bookstore",
   "BasePath": "_content/parish-bookstore",
   "Mode": "Default",
@@ -51,40 +51,6 @@
       "OriginalItemSpec": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\parish-bookstore.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\___favicon.ico",
-      "SourceId": "parish-bookstore",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\",
-      "BasePath": "_content/parish-bookstore",
-      "RelativePath": "___favicon.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\___favicon.ico"
-    },
-    {
-      "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\_favicon.ico",
-      "SourceId": "parish-bookstore",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\",
-      "BasePath": "_content/parish-bookstore",
-      "RelativePath": "_favicon.ico",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\_favicon.ico"
-    },
-    {
       "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\css\\normalize.css",
       "SourceId": "parish-bookstore",
       "SourceType": "Discovered",
@@ -100,23 +66,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\normalize.css"
-    },
-    {
-      "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\css\\scratch.css",
-      "SourceId": "parish-bookstore",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\",
-      "BasePath": "_content/parish-bookstore",
-      "RelativePath": "css/scratch.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\scratch.css"
     },
     {
       "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\css\\site.css",
