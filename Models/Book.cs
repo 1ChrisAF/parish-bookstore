@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
@@ -19,4 +20,6 @@ public class Book
     [Required(ErrorMessage ="Book price is required!")]
     public decimal Price {get; set;}
     public string? Description {get; set;}
+    [NotMapped]
+    public IFormFile Image {get; set;}
 }
