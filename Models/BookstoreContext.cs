@@ -22,6 +22,20 @@ public class BookstoreContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        // Added because decorators in models weren't satisfying the type warns
+        // ***
+        var decimalProps = modelBuilder.Model
+        .GetEntityTypes()
+        .SelectMany(t => t.GetProperties())
+        .Where(p => (System.Nullable.GetUnderlyingType(p.ClrType) ?? p.ClrType) == typeof(decimal));
+
+        foreach (var property in decimalProps)
+        {
+            property.SetPrecision(18);
+            property.SetScale(2);
+        }
+        // ***
+
         base.OnModelCreating(modelBuilder);
         modelBuilder.Entity<BookCategory>().HasData(
             new BookCategory {BookCategoryId = 1, CategoryName = "Prayer & Service Books"},
