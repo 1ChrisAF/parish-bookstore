@@ -43,5 +43,27 @@ namespace parish_bookstore.Controllers
 
             return View(book);
         }
+
+        // GET: Book/Create
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Book/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("BookId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(book);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(book);
+        }
     }
 }
