@@ -6,6 +6,8 @@ namespace parish_bookstore.Models;
 public class Book 
 {
     public int BookId { get; set; }
+    [Required(ErrorMessage = "Please select a category.")]
+    public int BookCategoryId { get; set; }  // foreign key property
     public BookCategory Category {get; set;}
     [Required(ErrorMessage ="Book title is required!")]
     public string Title {get; set;}
