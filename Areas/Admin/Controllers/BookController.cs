@@ -14,14 +14,20 @@ namespace parish_bookstore.Areas.Admin.Controllers
     {
         private readonly BookstoreContext _context;
 
+        BookstoreContext viewContext;
+
         public BookController(BookstoreContext context)
         {
             _context = context;
+            viewContext = context;
         }
+
+        
 
         // GET: Book
         public async Task<IActionResult> Index()
         {
+            ViewData["Context"] = viewContext;
               return _context.Books != null ? 
                           View(await _context.Books.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Books'  is null.");
@@ -30,6 +36,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            ViewData["Context"] = viewContext;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
@@ -48,6 +55,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Create
         public IActionResult Create()
         {
+            ViewData["Context"] = viewContext;
             return View();
         }
 
@@ -56,8 +64,9 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
+        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
+            ViewData["Context"] = viewContext;
             if (ModelState.IsValid)
             {
                 _context.Add(book);
@@ -70,6 +79,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["Context"] = viewContext;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
@@ -88,8 +98,9 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BookId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
+            ViewData["Context"] = viewContext;
             if (id != book.BookId)
             {
                 return NotFound();
@@ -121,6 +132,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            ViewData["Context"] = viewContext;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
@@ -141,6 +153,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            ViewData["Context"] = viewContext;
             if (_context.Books == null)
             {
                 return Problem("Entity set 'BookstoreContext.Books'  is null.");

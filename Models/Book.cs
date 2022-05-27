@@ -7,6 +7,7 @@ public class Book
 {
     public int BookId { get; set; }
     [Required(ErrorMessage = "Please select a category.")]
+    [Display(Name = "Book Category")]
     public int BookCategoryId { get; set; }  // foreign key property
     
     [Required(ErrorMessage ="Book title is required!")]

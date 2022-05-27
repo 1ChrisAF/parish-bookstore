@@ -1,8 +1,7 @@
 @model parish_bookstore.Models.Book
 
 @{
-    ViewData["Title"] = "Book Details";
-    ViewData["Header"] = "Book Details";
+    ViewData["Title"] = "Details";
 }
 
 <h1>Details</h1>
@@ -11,6 +10,12 @@
     <h4>Book</h4>
     <hr />
     <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BookCategoryId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BookCategoryId)
+        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Title)
         </dt>
