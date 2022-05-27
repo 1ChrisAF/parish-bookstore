@@ -22,6 +22,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: HomeAltarItem
         public async Task<IActionResult> Index()
         {
+            ViewData["Context"] = _context;
               return _context.AltarItems != null ? 
                           View(await _context.AltarItems.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.AltarItems'  is null.");
@@ -30,6 +31,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: HomeAltarItem/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            ViewData["Context"] = _context;
             if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
@@ -48,6 +50,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: HomeAltarItem/Create
         public IActionResult Create()
         {
+            ViewData["Context"] = _context;
             return View();
         }
 
@@ -58,6 +61,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
         {
+            ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
                 _context.Add(homeAltarItem);
@@ -70,6 +74,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: HomeAltarItem/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["Context"] = _context;
             if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
@@ -90,6 +95,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
         {
+            ViewData["Context"] = _context;
             if (id != homeAltarItem.HomeAltarItemId)
             {
                 return NotFound();
@@ -121,6 +127,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: HomeAltarItem/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            ViewData["Context"] = _context;
             if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
@@ -141,6 +148,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            ViewData["Context"] = _context;
             if (_context.AltarItems == null)
             {
                 return Problem("Entity set 'BookstoreContext.AltarItems'  is null.");

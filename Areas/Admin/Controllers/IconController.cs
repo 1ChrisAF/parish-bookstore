@@ -22,6 +22,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Icon
         public async Task<IActionResult> Index()
         {
+            ViewData["Context"] = _context;
               return _context.Icons != null ? 
                           View(await _context.Icons.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Icons'  is null.");
@@ -30,6 +31,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Icon/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            ViewData["Context"] = _context;
             if (id == null || _context.Icons == null)
             {
                 return NotFound();
@@ -48,6 +50,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Icon/Create
         public IActionResult Create()
         {
+            ViewData["Context"] = _context;
             return View();
         }
 
@@ -58,6 +61,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IconId,CategoryId,Name,Price,Description")] Icon icon)
         {
+            ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
                 _context.Add(icon);
@@ -70,6 +74,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Icon/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewData["Context"] = _context;
             if (id == null || _context.Icons == null)
             {
                 return NotFound();
@@ -90,6 +95,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IconId,CategoryId,Name,Price,Description")] Icon icon)
         {
+            ViewData["Context"] = _context;
             if (id != icon.IconId)
             {
                 return NotFound();
@@ -121,6 +127,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Icon/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            ViewData["Context"] = _context;
             if (id == null || _context.Icons == null)
             {
                 return NotFound();
@@ -141,6 +148,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            ViewData["Context"] = _context;
             if (_context.Icons == null)
             {
                 return Problem("Entity set 'BookstoreContext.Icons'  is null.");

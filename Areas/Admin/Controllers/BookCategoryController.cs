@@ -7,96 +7,95 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parish_bookstore.Models;
 
-namespace parish_bookstore.Areas.Admin.Controllers
+namespace parish_bookstore.Areas_Admin_Controllers
 {
-    [Area("Admin")]
-    public class GeneralItemController : Controller
+    public class BookCategoryController : Controller
     {
         private readonly BookstoreContext _context;
 
-        public GeneralItemController(BookstoreContext context)
+        public BookCategoryController(BookstoreContext context)
         {
             _context = context;
         }
 
-        // GET: GeneralItem
+        // GET: BookCategory
         public async Task<IActionResult> Index()
         {
             ViewData["Context"] = _context;
-              return _context.GeneralItems != null ? 
-                          View(await _context.GeneralItems.ToListAsync()) :
-                          Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
+              return _context.BookCategories != null ? 
+                          View(await _context.BookCategories.ToListAsync()) :
+                          Problem("Entity set 'BookstoreContext.BookCategories'  is null.");
         }
 
-        // GET: GeneralItem/Details/5
+        // GET: BookCategory/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             ViewData["Context"] = _context;
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.BookCategories == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
+            var bookCategory = await _context.BookCategories
+                .FirstOrDefaultAsync(m => m.BookCategoryId == id);
+            if (bookCategory == null)
             {
                 return NotFound();
             }
 
-            return View(generalItem);
+            return View(bookCategory);
         }
 
-        // GET: GeneralItem/Create
+        // GET: BookCategory/Create
         public IActionResult Create()
         {
             ViewData["Context"] = _context;
             return View();
         }
 
-        // POST: GeneralItem/Create
+        // POST: BookCategory/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
+        public async Task<IActionResult> Create([Bind("BookCategoryId,CategoryName")] BookCategory bookCategory)
         {
             ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
-                _context.Add(generalItem);
+                _context.Add(bookCategory);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(generalItem);
+            return View(bookCategory);
         }
 
-        // GET: GeneralItem/Edit/5
+        // GET: BookCategory/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["Context"] = _context;
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.BookCategories == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem == null)
+            var bookCategory = await _context.BookCategories.FindAsync(id);
+            if (bookCategory == null)
             {
                 return NotFound();
             }
-            return View(generalItem);
+            return View(bookCategory);
         }
 
-        // POST: GeneralItem/Edit/5
+        // POST: BookCategory/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
+        public async Task<IActionResult> Edit(int id, [Bind("BookCategoryId,CategoryName")] BookCategory bookCategory)
         {
             ViewData["Context"] = _context;
-            if (id != generalItem.GeneralItemId)
+            if (id != bookCategory.BookCategoryId)
             {
                 return NotFound();
             }
@@ -105,12 +104,12 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(generalItem);
+                    _context.Update(bookCategory);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GeneralItemExists(generalItem.GeneralItemId))
+                    if (!BookCategoryExists(bookCategory.BookCategoryId))
                     {
                         return NotFound();
                     }
@@ -121,51 +120,51 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(generalItem);
+            return View(bookCategory);
         }
 
-        // GET: GeneralItem/Delete/5
+        // GET: BookCategory/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             ViewData["Context"] = _context;
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.BookCategories == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
+            var bookCategory = await _context.BookCategories
+                .FirstOrDefaultAsync(m => m.BookCategoryId == id);
+            if (bookCategory == null)
             {
                 return NotFound();
             }
 
-            return View(generalItem);
+            return View(bookCategory);
         }
 
-        // POST: GeneralItem/Delete/5
+        // POST: BookCategory/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             ViewData["Context"] = _context;
-            if (_context.GeneralItems == null)
+            if (_context.BookCategories == null)
             {
-                return Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
+                return Problem("Entity set 'BookstoreContext.BookCategories'  is null.");
             }
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem != null)
+            var bookCategory = await _context.BookCategories.FindAsync(id);
+            if (bookCategory != null)
             {
-                _context.GeneralItems.Remove(generalItem);
+                _context.BookCategories.Remove(bookCategory);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GeneralItemExists(int id)
+        private bool BookCategoryExists(int id)
         {
-          return (_context.GeneralItems?.Any(e => e.GeneralItemId == id)).GetValueOrDefault();
+          return (_context.BookCategories?.Any(e => e.BookCategoryId == id)).GetValueOrDefault();
         }
     }
 }

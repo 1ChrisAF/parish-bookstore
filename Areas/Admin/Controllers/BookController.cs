@@ -14,12 +14,9 @@ namespace parish_bookstore.Areas.Admin.Controllers
     {
         private readonly BookstoreContext _context;
 
-        BookstoreContext viewContext;
-
         public BookController(BookstoreContext context)
         {
             _context = context;
-            viewContext = context;
         }
 
         
@@ -27,7 +24,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book
         public async Task<IActionResult> Index()
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
               return _context.Books != null ? 
                           View(await _context.Books.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Books'  is null.");
@@ -36,7 +33,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
@@ -55,7 +52,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Create
         public IActionResult Create()
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             return View();
         }
 
@@ -66,7 +63,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
                 _context.Add(book);
@@ -79,7 +76,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
@@ -100,7 +97,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (id != book.BookId)
             {
                 return NotFound();
@@ -132,7 +129,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // GET: Book/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
@@ -153,7 +150,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (_context.Books == null)
             {
                 return Problem("Entity set 'BookstoreContext.Books'  is null.");

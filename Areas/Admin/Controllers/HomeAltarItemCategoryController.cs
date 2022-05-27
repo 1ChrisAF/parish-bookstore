@@ -10,93 +10,93 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class GeneralItemController : Controller
+    public class HomeAltarItemCategoryController : Controller
     {
         private readonly BookstoreContext _context;
 
-        public GeneralItemController(BookstoreContext context)
+        public HomeAltarItemCategoryController(BookstoreContext context)
         {
             _context = context;
         }
 
-        // GET: GeneralItem
+        // GET: Admin/HomeAltarItemCategory
         public async Task<IActionResult> Index()
         {
             ViewData["Context"] = _context;
-              return _context.GeneralItems != null ? 
-                          View(await _context.GeneralItems.ToListAsync()) :
-                          Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
+              return _context.AltarItemCategories != null ? 
+                          View(await _context.AltarItemCategories.ToListAsync()) :
+                          Problem("Entity set 'BookstoreContext.AltarItemCategories'  is null.");
         }
 
-        // GET: GeneralItem/Details/5
+        // GET: Admin/HomeAltarItemCategory/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             ViewData["Context"] = _context;
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.AltarItemCategories == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
+            var homeAltarItemCategory = await _context.AltarItemCategories
+                .FirstOrDefaultAsync(m => m.HomeAltarItemCategoryId == id);
+            if (homeAltarItemCategory == null)
             {
                 return NotFound();
             }
 
-            return View(generalItem);
+            return View(homeAltarItemCategory);
         }
 
-        // GET: GeneralItem/Create
+        // GET: Admin/HomeAltarItemCategory/Create
         public IActionResult Create()
         {
             ViewData["Context"] = _context;
             return View();
         }
 
-        // POST: GeneralItem/Create
+        // POST: Admin/HomeAltarItemCategory/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
+        public async Task<IActionResult> Create([Bind("HomeAltarItemCategoryId,CategoryName")] HomeAltarItemCategory homeAltarItemCategory)
         {
             ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
-                _context.Add(generalItem);
+                _context.Add(homeAltarItemCategory);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(generalItem);
+            return View(homeAltarItemCategory);
         }
 
-        // GET: GeneralItem/Edit/5
+        // GET: Admin/HomeAltarItemCategory/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             ViewData["Context"] = _context;
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.AltarItemCategories == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem == null)
+            var homeAltarItemCategory = await _context.AltarItemCategories.FindAsync(id);
+            if (homeAltarItemCategory == null)
             {
                 return NotFound();
             }
-            return View(generalItem);
+            return View(homeAltarItemCategory);
         }
 
-        // POST: GeneralItem/Edit/5
+        // POST: Admin/HomeAltarItemCategory/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
+        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemCategoryId,CategoryName")] HomeAltarItemCategory homeAltarItemCategory)
         {
             ViewData["Context"] = _context;
-            if (id != generalItem.GeneralItemId)
+            if (id != homeAltarItemCategory.HomeAltarItemCategoryId)
             {
                 return NotFound();
             }
@@ -105,12 +105,12 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(generalItem);
+                    _context.Update(homeAltarItemCategory);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GeneralItemExists(generalItem.GeneralItemId))
+                    if (!HomeAltarItemCategoryExists(homeAltarItemCategory.HomeAltarItemCategoryId))
                     {
                         return NotFound();
                     }
@@ -121,51 +121,51 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(generalItem);
+            return View(homeAltarItemCategory);
         }
 
-        // GET: GeneralItem/Delete/5
+        // GET: Admin/HomeAltarItemCategory/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             ViewData["Context"] = _context;
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.AltarItemCategories == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
+            var homeAltarItemCategory = await _context.AltarItemCategories
+                .FirstOrDefaultAsync(m => m.HomeAltarItemCategoryId == id);
+            if (homeAltarItemCategory == null)
             {
                 return NotFound();
             }
 
-            return View(generalItem);
+            return View(homeAltarItemCategory);
         }
 
-        // POST: GeneralItem/Delete/5
+        // POST: Admin/HomeAltarItemCategory/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             ViewData["Context"] = _context;
-            if (_context.GeneralItems == null)
+            if (_context.AltarItemCategories == null)
             {
-                return Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
+                return Problem("Entity set 'BookstoreContext.AltarItemCategories'  is null.");
             }
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem != null)
+            var homeAltarItemCategory = await _context.AltarItemCategories.FindAsync(id);
+            if (homeAltarItemCategory != null)
             {
-                _context.GeneralItems.Remove(generalItem);
+                _context.AltarItemCategories.Remove(homeAltarItemCategory);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GeneralItemExists(int id)
+        private bool HomeAltarItemCategoryExists(int id)
         {
-          return (_context.GeneralItems?.Any(e => e.GeneralItemId == id)).GetValueOrDefault();
+          return (_context.AltarItemCategories?.Any(e => e.HomeAltarItemCategoryId == id)).GetValueOrDefault();
         }
     }
 }

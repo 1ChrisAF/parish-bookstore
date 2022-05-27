@@ -16343,6 +16343,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\BookCategory\\Delete.cshtml",
+      "TargetPath": "Views\\BookCategory\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\Book\\Edit.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Book\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16350,6 +16355,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\BookCategory\\Create.cshtml",
+      "TargetPath": "Views\\BookCategory\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16400,6 +16410,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\IconCategory\\Index.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\IconCategory\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\BookCategory\\Edit.cshtml",
+      "TargetPath": "Views\\BookCategory\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16478,6 +16493,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\BookCategory\\Index.cshtml",
+      "TargetPath": "Views\\BookCategory\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\PrayerRope\\Edit.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\PrayerRope\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16530,6 +16550,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\Book\\Index.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Book\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\BookCategory\\Details.cshtml",
+      "TargetPath": "Views\\BookCategory\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
