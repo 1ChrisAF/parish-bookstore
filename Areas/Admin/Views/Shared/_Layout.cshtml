@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Parish Bookstore</title>
     <link rel="stylesheet" href="~/wwwroot/css/normalize.css">
-    <link rel="stylesheet" href="~/css/scratch.css">
+    <link rel="stylesheet" href="~/css/site.css">
 </head>
 <body>
     <header>
@@ -25,11 +25,11 @@
             <div id="sideNav">
                 <nav>
                     <ul>
-                        <li class="listItem"><a asp-area="" asp-controller="Book" asp-action="Index">Books</a></li>
-                        <li class="listItem"><a asp-area="" asp-controller="Icon" asp-action="Index">Icons</a></li>
-                        <li class="listItem"><a asp-area="" asp-controller="HomeAltarItem" asp-action="Index">Home Altar</a></li>
-                        <li class="listItem"><a asp-area="" asp-controller="PrayerRope" asp-action="Index">Prayer Ropes</a></li>
-                        <li id="lastListItem"><a asp-area="" asp-controller="GeneralItem" asp-action="Index">Misc.</a></li>
+                        <li class="listItem"><a asp-area="Admin" asp-controller="Book" asp-action="Index">Books</a></li>
+                        <li class="listItem"><a asp-area="Admin" asp-controller="Icon" asp-action="Index">Icons</a></li>
+                        <li class="listItem"><a asp-area="Admin" asp-controller="HomeAltarItem" asp-action="Index">Home Altar</a></li>
+                        <li class="listItem"><a asp-area="Admin" asp-controller="PrayerRope" asp-action="Index">Prayer Ropes</a></li>
+                        <li id="lastListItem"><a asp-area="Admin" asp-controller="GeneralItem" asp-action="Index">Misc.</a></li>
                     </ul>
                 </nav>
                 <nav id="externalSites">
@@ -49,7 +49,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2022 - parish_bookstore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2022 - parish_bookstore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a> | <a asp-area="Admin" asp-controller="Home" asp-action="Index">Admin</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
