@@ -104,7 +104,7 @@ namespace parish_bookstore.Migrations
                 {
                     BookId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryBookCategoryId = table.Column<int>(type: "int", nullable: false),
+                    BookCategoryId = table.Column<int>(type: "int", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -117,8 +117,8 @@ namespace parish_bookstore.Migrations
                 {
                     table.PrimaryKey("PK_Books", x => x.BookId);
                     table.ForeignKey(
-                        name: "FK_Books_BookCategories_CategoryBookCategoryId",
-                        column: x => x.CategoryBookCategoryId,
+                        name: "FK_Books_BookCategories_BookCategoryId",
+                        column: x => x.BookCategoryId,
                         principalTable: "BookCategories",
                         principalColumn: "BookCategoryId",
                         onDelete: ReferentialAction.Cascade);
@@ -219,9 +219,9 @@ namespace parish_bookstore.Migrations
                 column: "CategoryHomeAltarItemCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_CategoryBookCategoryId",
+                name: "IX_Books_BookCategoryId",
                 table: "Books",
-                column: "CategoryBookCategoryId");
+                column: "BookCategoryId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_GeneralItems_CategoryGeneralItemCategoryId",

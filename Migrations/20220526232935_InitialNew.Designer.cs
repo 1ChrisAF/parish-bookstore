@@ -11,7 +11,7 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220526223509_InitialNew")]
+    [Migration("20220526232935_InitialNew")]
     partial class InitialNew
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -35,7 +35,7 @@ namespace parish_bookstore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryBookCategoryId")
+                    b.Property<int>("BookCategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -61,7 +61,7 @@ namespace parish_bookstore.Migrations
 
                     b.HasKey("BookId");
 
-                    b.HasIndex("CategoryBookCategoryId");
+                    b.HasIndex("BookCategoryId");
 
                     b.ToTable("Books");
                 });
@@ -346,7 +346,7 @@ namespace parish_bookstore.Migrations
                 {
                     b.HasOne("parish_bookstore.Models.BookCategory", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryBookCategoryId")
+                        .HasForeignKey("BookCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

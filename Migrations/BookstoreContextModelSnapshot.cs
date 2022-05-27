@@ -33,7 +33,7 @@ namespace parish_bookstore.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryBookCategoryId")
+                    b.Property<int>("BookCategoryId")
                         .HasColumnType("int");
 
                     b.Property<string>("Description")
@@ -59,7 +59,7 @@ namespace parish_bookstore.Migrations
 
                     b.HasKey("BookId");
 
-                    b.HasIndex("CategoryBookCategoryId");
+                    b.HasIndex("BookCategoryId");
 
                     b.ToTable("Books");
                 });
@@ -344,7 +344,7 @@ namespace parish_bookstore.Migrations
                 {
                     b.HasOne("parish_bookstore.Models.BookCategory", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryBookCategoryId")
+                        .HasForeignKey("BookCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

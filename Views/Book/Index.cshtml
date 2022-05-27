@@ -1,14 +1,21 @@
 @model IEnumerable<parish_bookstore.Models.Book>
 
 @{
-    ViewData["Title"] = "Books";
-    ViewData["Header"] = "Books";
+    ViewData["Title"] = "Index";
 }
 
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
-            <th id="firstColumnHead">
+            <th>
+                @Html.DisplayNameFor(model => model.BookCategoryId)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
             <th>
@@ -29,12 +36,15 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th id="lastColumnHead"></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookCategoryId)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
@@ -57,7 +67,9 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.BookId">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.BookId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BookId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BookId">Delete</a>
             </td>
         </tr>
 }

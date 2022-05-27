@@ -5,6 +5,8 @@ namespace parish_bookstore.Models;
 public class BookCategory 
 {
     public int BookCategoryId {get; set;}
+
     [Required(ErrorMessage ="Category name is required!")]
     public string CategoryName {get; set;}
+
 }
