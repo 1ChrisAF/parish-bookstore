@@ -13,14 +13,18 @@ namespace parish_bookstore.Controllers
     {
         private readonly BookstoreContext _context;
 
+        BookstoreContext viewContext;
+
         public GeneralItemController(BookstoreContext context)
         {
             _context = context;
+            viewContext = context;
         }
 
         // GET: GeneralItem
         public async Task<IActionResult> Index()
         {
+            ViewData["Context"] = viewContext;
               return _context.GeneralItems != null ? 
                           View(await _context.GeneralItems.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
@@ -29,6 +33,7 @@ namespace parish_bookstore.Controllers
         // GET: GeneralItem/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            ViewData["Context"] = viewContext;
             if (id == null || _context.GeneralItems == null)
             {
                 return NotFound();
@@ -42,121 +47,6 @@ namespace parish_bookstore.Controllers
             }
 
             return View(generalItem);
-        }
-
-        // GET: GeneralItem/Create
-        public IActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: GeneralItem/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
-        {
-            if (ModelState.IsValid)
-            {
-                _context.Add(generalItem);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(generalItem);
-        }
-
-        // GET: GeneralItem/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null || _context.GeneralItems == null)
-            {
-                return NotFound();
-            }
-
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem == null)
-            {
-                return NotFound();
-            }
-            return View(generalItem);
-        }
-
-        // POST: GeneralItem/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
-        {
-            if (id != generalItem.GeneralItemId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(generalItem);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!GeneralItemExists(generalItem.GeneralItemId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(generalItem);
-        }
-
-        // GET: GeneralItem/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null || _context.GeneralItems == null)
-            {
-                return NotFound();
-            }
-
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
-            {
-                return NotFound();
-            }
-
-            return View(generalItem);
-        }
-
-        // POST: GeneralItem/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            if (_context.GeneralItems == null)
-            {
-                return Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
-            }
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem != null)
-            {
-                _context.GeneralItems.Remove(generalItem);
-            }
-            
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
-
-        private bool GeneralItemExists(int id)
-        {
-          return (_context.GeneralItems?.Any(e => e.GeneralItemId == id)).GetValueOrDefault();
         }
     }
 }

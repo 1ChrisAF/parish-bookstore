@@ -55,26 +55,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem copy/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW0gY29weVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem copy/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW0gY29weVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem copy/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW0gY29weVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem copy/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW0gY29weVxFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem copy/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW0gY29weVxJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItemCategory/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1DYXRlZ29yeVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -95,28 +75,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1DYXRlZ29yeVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1cRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1cRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1cRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/GeneralItem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcR2VuZXJhbEl0ZW1cSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem copy/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbSBjb3B5XENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem copy/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbSBjb3B5XERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem copy/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbSBjb3B5XERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem copy/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbSBjb3B5XEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem copy/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbSBjb3B5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItemCategory/Create.cshtml]
@@ -139,28 +115,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbUNhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/HomeAltarItem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZUFsdGFySXRlbVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon copy/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvbiBjb3B5XENyZWF0ZS5jc2h0bWw=
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon copy/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvbiBjb3B5XERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon copy/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvbiBjb3B5XERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon copy/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvbiBjb3B5XEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon copy/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvbiBjb3B5XEluZGV4LmNzaHRtbA==
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/IconCategory/Create.cshtml]
@@ -183,28 +163,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvbkNhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvblxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/Icon/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSWNvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope copy/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZSBjb3B5XENyZWF0ZS5jc2h0bWw=
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope copy/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZSBjb3B5XERlbGV0ZS5jc2h0bWw=
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope copy/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZSBjb3B5XERldGFpbHMuY3NodG1s
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope copy/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZSBjb3B5XEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope copy/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZSBjb3B5XEluZGV4LmNzaHRtbA==
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJheWVyUm9wZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Areas/Admin/Views/PrayerRope/Index.cshtml]
@@ -235,40 +227,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/GeneralItem/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbEl0ZW1cQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/GeneralItem/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbEl0ZW1cRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/GeneralItem/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbEl0ZW1cRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/GeneralItem/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbEl0ZW1cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/GeneralItem/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR2VuZXJhbEl0ZW1cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/HomeAltarItem/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFsdGFySXRlbVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/HomeAltarItem/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFsdGFySXRlbVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/HomeAltarItem/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFsdGFySXRlbVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/HomeAltarItem/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUFsdGFySXRlbVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/HomeAltarItem/Index.cshtml]
@@ -283,40 +251,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Index.cshtml]
