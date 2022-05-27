@@ -7,8 +7,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parish_bookstore.Models;
 
-namespace parish_bookstore.Controllers
+namespace parish_bookstore.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class GeneralItemController : Controller
     {
         private readonly BookstoreContext _context;

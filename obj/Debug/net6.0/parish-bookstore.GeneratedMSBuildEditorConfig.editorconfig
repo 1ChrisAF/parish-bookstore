@@ -283,16 +283,40 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/Icon/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWNvblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJheWVyUm9wZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [c:/Users/chris/Repos/Web Pages and Applications/Dynamic Projects/parish-bookstore/Views/PrayerRope/Index.cshtml]

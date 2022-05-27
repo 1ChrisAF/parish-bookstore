@@ -16378,6 +16378,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\PrayerRope\\Edit.cshtml",
+      "TargetPath": "Views\\PrayerRope\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\PrayerRope\\Index.cshtml",
       "TargetPath": "Views\\PrayerRope\\Index.cshtml",
       "FileKind": "mvc"
@@ -16390,6 +16395,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\BookCatgegory\\Details.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\BookCatgegory\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\Icon\\Delete.cshtml",
+      "TargetPath": "Views\\Icon\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16458,6 +16468,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\Icon\\Create.cshtml",
+      "TargetPath": "Views\\Icon\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\HomeAltarItem copy\\Create.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\HomeAltarItem copy\\Create.cshtml",
       "FileKind": "mvc"
@@ -16470,6 +16485,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\Book\\Create.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\Book\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\PrayerRope\\Create.cshtml",
+      "TargetPath": "Views\\PrayerRope\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16570,6 +16590,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\GeneralItem\\Create.cshtml",
       "TargetPath": "Views\\GeneralItem\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\Icon\\Edit.cshtml",
+      "TargetPath": "Views\\Icon\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16680,6 +16705,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\PrayerRope\\Details.cshtml",
       "TargetPath": "Views\\PrayerRope\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\PrayerRope\\Delete.cshtml",
+      "TargetPath": "Views\\PrayerRope\\Delete.cshtml",
       "FileKind": "mvc"
     }
   ],

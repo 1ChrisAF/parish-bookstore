@@ -1,14 +1,18 @@
 @model IEnumerable<parish_bookstore.Models.PrayerRope>
 
 @{
-    ViewData["Title"] = "Prayer Ropes";
-    ViewData["Header"] = "Prayer Ropes";
+    ViewData["Title"] = "Index";
 }
 
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
-            <th id="firstColumnHead">
+            <th>
                 @Html.DisplayNameFor(model => model.KnotCount)
             </th>
             <th>
@@ -20,7 +24,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th id="lastColumnHead"></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -39,7 +43,9 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.PrayerRopeId">Details</a>
+                <a asp-action="Edit" asp-route-id="@item.PrayerRopeId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PrayerRopeId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PrayerRopeId">Delete</a>
             </td>
         </tr>
 }

@@ -55,7 +55,7 @@ namespace parish_bookstore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HomeAltarItemId,Name,Price,Description")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace parish_bookstore.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,Name,Price,Description")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
         {
             if (id != homeAltarItem.HomeAltarItemId)
             {

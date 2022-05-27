@@ -7,89 +7,90 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using parish_bookstore.Models;
 
-namespace parish_bookstore.Controllers
+namespace parish_bookstore.Areas.Admin.Controllers
 {
-    public class GeneralItemController : Controller
+    [Area("Admin")]
+    public class HomeAltarItemController : Controller
     {
         private readonly BookstoreContext _context;
 
-        public GeneralItemController(BookstoreContext context)
+        public HomeAltarItemController(BookstoreContext context)
         {
             _context = context;
         }
 
-        // GET: GeneralItem
+        // GET: HomeAltarItem
         public async Task<IActionResult> Index()
         {
-              return _context.GeneralItems != null ? 
-                          View(await _context.GeneralItems.ToListAsync()) :
-                          Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
+              return _context.AltarItems != null ? 
+                          View(await _context.AltarItems.ToListAsync()) :
+                          Problem("Entity set 'BookstoreContext.AltarItems'  is null.");
         }
 
-        // GET: GeneralItem/Details/5
+        // GET: HomeAltarItem/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
+            var homeAltarItem = await _context.AltarItems
+                .FirstOrDefaultAsync(m => m.HomeAltarItemId == id);
+            if (homeAltarItem == null)
             {
                 return NotFound();
             }
 
-            return View(generalItem);
+            return View(homeAltarItem);
         }
 
-        // GET: GeneralItem/Create
+        // GET: HomeAltarItem/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: GeneralItem/Create
+        // POST: HomeAltarItem/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
+        public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(generalItem);
+                _context.Add(homeAltarItem);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(generalItem);
+            return View(homeAltarItem);
         }
 
-        // GET: GeneralItem/Edit/5
+        // GET: HomeAltarItem/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem == null)
+            var homeAltarItem = await _context.AltarItems.FindAsync(id);
+            if (homeAltarItem == null)
             {
                 return NotFound();
             }
-            return View(generalItem);
+            return View(homeAltarItem);
         }
 
-        // POST: GeneralItem/Edit/5
+        // POST: HomeAltarItem/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GeneralItemId,CategoryId,Name,Price,Description")] GeneralItem generalItem)
+        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
         {
-            if (id != generalItem.GeneralItemId)
+            if (id != homeAltarItem.HomeAltarItemId)
             {
                 return NotFound();
             }
@@ -98,12 +99,12 @@ namespace parish_bookstore.Controllers
             {
                 try
                 {
-                    _context.Update(generalItem);
+                    _context.Update(homeAltarItem);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!GeneralItemExists(generalItem.GeneralItemId))
+                    if (!HomeAltarItemExists(homeAltarItem.HomeAltarItemId))
                     {
                         return NotFound();
                     }
@@ -114,49 +115,49 @@ namespace parish_bookstore.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(generalItem);
+            return View(homeAltarItem);
         }
 
-        // GET: GeneralItem/Delete/5
+        // GET: HomeAltarItem/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.GeneralItems == null)
+            if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
             }
 
-            var generalItem = await _context.GeneralItems
-                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
-            if (generalItem == null)
+            var homeAltarItem = await _context.AltarItems
+                .FirstOrDefaultAsync(m => m.HomeAltarItemId == id);
+            if (homeAltarItem == null)
             {
                 return NotFound();
             }
 
-            return View(generalItem);
+            return View(homeAltarItem);
         }
 
-        // POST: GeneralItem/Delete/5
+        // POST: HomeAltarItem/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.GeneralItems == null)
+            if (_context.AltarItems == null)
             {
-                return Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
+                return Problem("Entity set 'BookstoreContext.AltarItems'  is null.");
             }
-            var generalItem = await _context.GeneralItems.FindAsync(id);
-            if (generalItem != null)
+            var homeAltarItem = await _context.AltarItems.FindAsync(id);
+            if (homeAltarItem != null)
             {
-                _context.GeneralItems.Remove(generalItem);
+                _context.AltarItems.Remove(homeAltarItem);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool GeneralItemExists(int id)
+        private bool HomeAltarItemExists(int id)
         {
-          return (_context.GeneralItems?.Any(e => e.GeneralItemId == id)).GetValueOrDefault();
+          return (_context.AltarItems?.Any(e => e.HomeAltarItemId == id)).GetValueOrDefault();
         }
     }
 }
