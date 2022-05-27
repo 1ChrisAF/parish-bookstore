@@ -1,14 +1,18 @@
 @model IEnumerable<parish_bookstore.Models.HomeAltarItem>
 
 @{
-    ViewData["Title"] = "Altar Items";
-    ViewData["Header"] = "Home Altar Items";
+    ViewData["Title"] = "Index";
 }
 
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
-            <th id="firstColumnHead">
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -17,7 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th id="lastColumnHead"></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -32,8 +36,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td> |
-                <a asp-action="Details" asp-route-id="@item.HomeAltarItemId">Details</a>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.HomeAltarItemId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.HomeAltarItemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.HomeAltarItemId">Delete</a>
             </td>
         </tr>
 }

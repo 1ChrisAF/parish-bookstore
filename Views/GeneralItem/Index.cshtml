@@ -1,13 +1,18 @@
 @model IEnumerable<parish_bookstore.Models.GeneralItem>
 
 @{
-    ViewData["Title"] = "General";
-    ViewData["Header"] = "Gifts & General Items";
+    ViewData["Title"] = "Index";
 }
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>
-            <th id="firstColumnHead">
+            <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
@@ -16,7 +21,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Description)
             </th>
-            <th id="lastColumnHead"></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -31,8 +36,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
-            <td> |
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.GeneralItemId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.GeneralItemId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.GeneralItemId">Delete</a>
             </td>
         </tr>
 }

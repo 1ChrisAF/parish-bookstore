@@ -6,7 +6,10 @@ namespace parish_bookstore.Models;
 public class Icon 
 {
     public int IconId {get; set;}
-    public IconCategory Category {get; set;}
+    [Required(ErrorMessage = "Please select a category.")]
+    [Display(Name = "Category")]
+    public int CategoryId {get; set;}
+    
     [Required(ErrorMessage ="Icon name is required!")]
     public string Name {get; set;}
     [Required(ErrorMessage ="Icon price is required!")]

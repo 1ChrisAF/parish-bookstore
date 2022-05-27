@@ -2,8 +2,9 @@
 
 @{
     ViewData["Title"] = "Details";
-    ViewData["Header"] = "Item Details";
 }
+
+<h1>Details</h1>
 
 <div>
     <h4>GeneralItem</h4>
@@ -29,6 +30,7 @@
         </dd>
     </dl>
 </div>
-<div> |
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.GeneralItemId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

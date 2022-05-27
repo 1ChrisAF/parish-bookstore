@@ -16298,6 +16298,11 @@
   "RootNamespace": "parish_bookstore",
   "Documents": [
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\HomeAltarItem\\Edit.cshtml",
+      "TargetPath": "Views\\HomeAltarItem\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\HomeAltarItemCategory\\Create.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\HomeAltarItemCategory\\Create.cshtml",
       "FileKind": "mvc"
@@ -16310,6 +16315,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\IconCategory\\Edit.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\IconCategory\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\HomeAltarItem\\Create.cshtml",
+      "TargetPath": "Views\\HomeAltarItem\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16478,6 +16488,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\GeneralItem\\Delete.cshtml",
+      "TargetPath": "Views\\GeneralItem\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\PrayerRope\\Index.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\PrayerRope\\Index.cshtml",
       "FileKind": "mvc"
@@ -16538,6 +16553,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\GeneralItem\\Edit.cshtml",
+      "TargetPath": "Views\\GeneralItem\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\IconCategory\\Index.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\IconCategory\\Index.cshtml",
       "FileKind": "mvc"
@@ -16545,6 +16565,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\HomeAltarItemCategory\\Delete.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\HomeAltarItemCategory\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\GeneralItem\\Create.cshtml",
+      "TargetPath": "Views\\GeneralItem\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16620,6 +16645,11 @@
     {
       "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Areas\\Admin\\Views\\GeneralItemCategory\\Edit.cshtml",
       "TargetPath": "Areas\\Admin\\Views\\GeneralItemCategory\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\Views\\HomeAltarItem\\Delete.cshtml",
+      "TargetPath": "Views\\HomeAltarItem\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
