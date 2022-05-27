@@ -1,14 +1,11 @@
 @model parish_bookstore.Models.PrayerRope
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Rope Details";
+    ViewData["Header"] = "Rope Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>PrayerRope</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.KnotCount)
@@ -36,7 +33,6 @@
         </dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.PrayerRopeId">Edit</a> |
+<div>|
     <a asp-action="Index">Back to List</a>
 </div>

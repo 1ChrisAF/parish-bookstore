@@ -1,20 +1,18 @@
 @model parish_bookstore.Models.GeneralItem
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Item Details";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    ViewData["Header"] = "Item Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>GeneralItem</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryId)
+            @context.GeneralItemCategories.Find(Model.CategoryId).CategoryName.ToString()
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -37,6 +35,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.GeneralItemId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>

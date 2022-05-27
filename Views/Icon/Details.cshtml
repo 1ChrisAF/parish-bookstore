@@ -1,20 +1,18 @@
 @model parish_bookstore.Models.Icon
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Icon Details";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    ViewData["Header"] = "Icon Details";
 }
 
-<h1>Details</h1>
-
 <div>
-    <h4>Icon</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CategoryId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.CategoryId)
+            @context.IconCategories.Find(Model.CategoryId).CategoryName.ToString()
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Name)
@@ -37,6 +35,5 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.IconId">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
