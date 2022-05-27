@@ -13,14 +13,20 @@ namespace parish_bookstore.Controllers
     {
         private readonly BookstoreContext _context;
 
+        BookstoreContext viewContext;
+
         public BookController(BookstoreContext context)
         {
             _context = context;
+            viewContext = context;
         }
+
+        
 
         // GET: Book
         public async Task<IActionResult> Index()
         {
+            ViewData["Context"] = viewContext;
               return _context.Books != null ? 
                           View(await _context.Books.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Books'  is null.");

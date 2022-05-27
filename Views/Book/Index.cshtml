@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Index";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
 }
 
 <h1>Index</h1>
@@ -43,7 +44,8 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.BookCategoryId)
+                
+                @context.BookCategories.Find(item.BookCategoryId).CategoryName.ToString()
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
