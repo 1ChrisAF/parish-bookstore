@@ -15,11 +15,6 @@ namespace parish_bookstore.Models
         private readonly string[] _permittedExtensions = { ".txt" };
         private readonly string _targetFilePath = "c:\\users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\media\\images";
 
-        public ImageModel()
-        {
-            
-        }
-
         [BindProperty]
         public Image FileUpload { get; set; }
 
