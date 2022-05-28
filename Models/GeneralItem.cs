@@ -16,6 +16,12 @@ public class GeneralItem
     [DataType(DataType.Currency)]
     [Column(TypeName = "decimal(18,2)")]
     public decimal Price {get; set;}
-    public string Description {get; set;}
+    public string? Description {get; set;}
+
+    public string ImageName { get; set; }  = "default.png";
+  
+    [Display(Name = "Image")]  
+    [NotMapped]
+    public IFormFile Image { get; set; }
 
 }

@@ -77,43 +77,6 @@ a {
     max-width: max-content;
     margin: 1vh;
 }
-
-.labelColumn {
-    float: left;
-    width: 15vh;
-    font-weight: bold;
-    padding-bottom: .5vh;
- }
-.column {
-    float: left;
-    width: 15vh;
-    padding-bottom: .5vh;
-}
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-.submitButton {
-      padding: .5vh 1vh;
-      margin: 1vh;
-  }
-.backToIndex {
-      padding: .5vh 1vh;
-      margin: 1vh;
-      font-weight: bold;
-      border: 1px solid black;
-      border-radius: 5px;
-      color: white;
-      background-color: #647C96;
-  }
-.backToIndex a {
-    color: white;
-}
-.backToIndex a:visited {
-    color: white;
-}
 #sideNav {
     
     height: 75vh;
@@ -182,12 +145,53 @@ a {
     float: right;
     padding: 0 2vh 2vh 10vh;
 }
+.labelColumn {
+    float: left;
+    width: 15vh;
+    font-weight: bold;
+    padding-bottom: .5vh;
+ }
+.column {
+    float: left;
+    text-align: left;
+    width: 20vh;
+    padding-bottom: .5vh;
+}
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.stageButtons {
+    padding: 1vh;
+}
+.submitButton {
+      padding: .5vh 1vh;
+      margin: 1vh;
+}
+.backToIndex {
+      padding: .5vh 1vh;
+      margin: 1vh;
+      font-weight: bold;
+      border: 1px solid black;
+      border-radius: 5px;
+      color: white;
+      background-color: #647C96;
+}
+.backToIndex a {
+    color: white;
+}
+.backToIndex a:visited {
+    color: white;
+}
 .imageContainer {
     float: left;
-    width: 30%;
+    max-width: 30%;
 }
 .imageContainer img {
     max-width: 100%;
+    max-height: 50vh;
 }
 .detailsContainer {
     float: left;

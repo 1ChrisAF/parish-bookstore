@@ -74,9 +74,10 @@
                 @Html.DisplayFor(model => model.Description)
             </div>
     </div>
+    <div class="row, stageButtons">
+        <a asp-action="Edit" asp-route-id="@Model?.BookId" class="backToIndex">Edit</a> |
+        <a asp-action="Index" class="backToIndex">Back to List</a>
+    </div>
 </div>
 <br>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.BookId" class="backToIndex">Edit</a> |
-    <a asp-action="Index" class="backToIndex">Back to List</a>
-</div>
+

@@ -18,4 +18,10 @@ public class Icon
     public decimal Price {get; set;}
     public string? Description {get; set;}
 
+    public string ImageName { get; set; }  = "default.png";
+  
+    [Display(Name = "Image")]  
+    [NotMapped]
+    public IFormFile Image { get; set; }
+
 }
