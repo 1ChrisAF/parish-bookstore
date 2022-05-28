@@ -11,7 +11,7 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220528190912_NewImageMigration")]
+    [Migration("20220528191408_NewImageMigration")]
     partial class NewImageMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
