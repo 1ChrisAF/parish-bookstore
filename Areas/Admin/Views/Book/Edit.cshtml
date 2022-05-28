@@ -78,11 +78,11 @@
                 <div class="column">
 					<label asp-for="Description"></label>
                 </div>
-            	<div class="column">
-					<input asp-for="Description"/>
+            </div>
+            <div class="row">
+					<textarea asp-for="Description" rows="3" cols="40"></textarea>
 					<span asp-validation-for="Description"></span>
                 </div>
-            </div>
 			<div>
                 <input type="submit" class="submitButton" value="Save Changes"/>
             </div>
