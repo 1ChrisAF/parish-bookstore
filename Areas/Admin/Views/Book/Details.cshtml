@@ -7,59 +7,86 @@
 }
 
 
-<div>
-    <dl class="row">
-        <dt>
+<style>
+.column {
+  float: left;
+  widivh: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+
+<div class="row">
+        <div class="labelColumn">
             @Html.DisplayNameFor(model => model.BookCategoryId)
-        </dt>
-        <dd>
+        </div>
+        <div class="column">
             @context.BookCategories.Find(Model.BookCategoryId).CategoryName.ToString()
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Publisher)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Publisher)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishYear)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PublishYear)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ISBN)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ISBN)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
+        </div>
 </div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="column" >
+            @Html.DisplayFor(model => model.Title)
+        </div>
+</div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.Author)
+        </div>
+        <div class="column" >
+            @Html.DisplayFor(model => model.Author)
+        </div>
+</div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.Publisher)
+        </div>
+        <div class="column">
+            @Html.DisplayFor(model => model.Publisher)
+        </div>
+</div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.PublishYear)
+        </div>
+        <div class="column">
+            @Html.DisplayFor(model => model.PublishYear)
+        </div>
+</div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.ISBN)
+        </div>
+        <div class="column">
+            @Html.DisplayFor(model => model.ISBN)
+        </div>
+</div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.Price)
+        </div>
+        <div class="column">
+            @Html.DisplayFor(model => model.Price)
+        </div>
+</div>
+<div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="column">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+</div>
+<br>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.BookId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.BookId" class="backToIndex">Edit</a> |
+    <a asp-action="Index" class="backToIndex">Back to List</a>
 </div>

@@ -77,18 +77,24 @@ a {
     max-width: max-content;
     margin: 1vh;
 }
-.column {
+
+.labelColumn {
     float: left;
     width: 15vh;
     font-weight: bold;
     padding-bottom: .5vh;
-  }
-  /* Clear floats after the columns */
-  .row:after {
+ }
+.column {
+    float: left;
+    width: 15vh;
+    padding-bottom: .5vh;
+}
+/* Clear floats after the columns */
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
+}
 .submitButton {
       padding: .5vh 1vh;
       margin: 1vh;
