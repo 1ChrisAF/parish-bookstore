@@ -180,7 +180,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (book.Image != null)  
             {  
                 string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, @"media\images");  
-                string fileName = model.ProfileImage.FileName;
+                string fileName = book.Image.FileName;
                 string fileExtension = "";
                 Boolean isExtension = false;
                 foreach (char c in fileName) 

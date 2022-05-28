@@ -182,6 +182,16 @@ a {
     float: right;
     padding: 0 2vh 2vh 10vh;
 }
+.imageContainer {
+    float: left;
+    width: 30%;
+}
+.imageContainer img {
+    max-width: 100%;
+}
+.detailsContainer {
+    float: left;
+}
 .table {
     border: 1px solid black;
     background-color: #A6A6A6;
