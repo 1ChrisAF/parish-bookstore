@@ -74,7 +74,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Details));
+                return RedirectToAction("Details", new { id = book.BookId });
             }
             return View(book);
         }
@@ -101,7 +101,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description,Image")] Book book)
         {
             ViewData["Context"] = _context;
             string trustedFileName = UploadedFile(book);
@@ -129,7 +129,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Details));
+                return RedirectToAction("Details", new { id = book.BookId });
             }
             return View(book);
         }
