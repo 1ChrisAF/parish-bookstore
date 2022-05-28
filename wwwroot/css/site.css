@@ -66,6 +66,21 @@ a {
     margin: 0 1em;
     float: left;
 }
+.warnHeader {
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    border: 2px solid white;
+    padding: 1vh;
+    max-width: max-content;
+    margin: 1vh;
+}
+.edit label {
+    font-weight: bold;
+    clear: right;
+}
 #sideNav {
     
     height: 75vh;
