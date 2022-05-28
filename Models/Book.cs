@@ -26,4 +26,15 @@ public class Book
     [Column(TypeName = "decimal(18,2)")]
     public decimal Price {get; set;}
     public string? Description {get; set;}
+
+    [NotMapped]
+    public Image Image {get; set;}
+
+    private string fileName;
+    public string FileName
+    {
+        get { return fileName; }
+        set { fileName = Image.FileName; }
+    }
+    
 }

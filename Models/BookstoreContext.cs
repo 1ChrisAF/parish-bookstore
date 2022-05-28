@@ -22,6 +22,8 @@ public class BookstoreContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        modelBuilder.Entity<ImageModel>().ToTable(nameof(ImageModel), t => t.ExcludeFromMigrations());
+        modelBuilder.Entity<Image>().ToTable(nameof(Image), t => t.ExcludeFromMigrations());
         // Added because decorators in models weren't satisfying the type warns
         // ***
         var decimalProps = modelBuilder.Model
