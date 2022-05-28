@@ -27,15 +27,12 @@ public class Book
     public decimal Price {get; set;}
     public string? Description {get; set;}
 
-    public string FileName {get; set;}
-
+    public string ImageName { get; set; }  = "default.png";
+  
+    [Display(Name = "Image")]  
     [NotMapped]
-    public ImageModel BookImage {get; set;}
+    public IFormFile Image { get; set; }
 
     
-    public void setFileName()
-    {
-        this.FileName = BookImage.FileUpload.FileName;
-    }
     
 }

@@ -52,15 +52,9 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <dl>
-                <dt>
-                    <label asp-for="BookImage.FileUpload.FormFile"></label>
-                </dt>
-                <dd>
-                    <input asp-for="BookImage.FileUpload.FormFile" type="file" />
-                    <span asp-validation-for="BookImage.FileUpload.FormFile"></span>
-                </dd>
-            </dl>
+                <label asp-for="Image"></label>
+                <input type="file" asp-for="Image">
+                <span asp-validation-for="Image"></span>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

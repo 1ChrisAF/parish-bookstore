@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Hosting; 
 using Microsoft.EntityFrameworkCore;
 using parish_bookstore.Models;
 
@@ -13,10 +14,12 @@ namespace parish_bookstore.Areas.Admin.Controllers
     public class BookController : Controller
     {
         private readonly BookstoreContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public BookController(BookstoreContext context)
+        public BookController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         
@@ -61,8 +64,10 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description,BookImage")] Book book)
+        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description,Image")] Book book)
         {
+            string trustedFileName = UploadedFile(book);
+            book.ImageName = trustedFileName;
             ViewData["Context"] = _context;
             
             if (ModelState.IsValid)
@@ -99,7 +104,8 @@ namespace parish_bookstore.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
             ViewData["Context"] = _context;
-            book.setFileName();
+            string trustedFileName = UploadedFile(book);
+            book.ImageName = trustedFileName;
             if (id != book.BookId)
             {
                 return NotFound();
@@ -165,6 +171,37 @@ namespace parish_bookstore.Areas.Admin.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private string UploadedFile(Book book)  
+        {  
+            string uniqueFileName = null;  
+
+            if (book.Image != null)  
+            {  
+                string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, @"media\images");  
+                string fileName = model.ProfileImage.FileName;
+                string fileExtension = "";
+                Boolean isExtension = false;
+                foreach (char c in fileName) 
+                {
+                    if (c == '.')
+                    {
+                        isExtension = true;
+                    }
+                    if(isExtension)
+                    {
+                        fileExtension += c;
+                    }
+                }
+                uniqueFileName = Guid.NewGuid().ToString() + fileExtension;  
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);  
+                using (var fileStream = new FileStream(filePath, FileMode.Create))  
+                {  
+                    book.Image.CopyTo(fileStream);  
+                }  
+            }  
+            return uniqueFileName;  
         }
 
         private bool BookExists(int id)
