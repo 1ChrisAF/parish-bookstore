@@ -6,53 +6,53 @@
     ViewData["Header"] = "Edit Book";
 }
 
-<p class="warnHeader">ADMIN</p>
+
 <div>
-    <div class="edit">
+    <div>
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly"></div>
             <input type="hidden" asp-for="BookId"/>
-            <div class="form-group">
+            <div class="edit">
                 <label asp-for="BookCategoryId"></label>
                 <input asp-for="BookCategoryId"/>
-                <span asp-validation-for="BookCategoryId"></span>
             </div>
-            <div class="form-group">
+            <span asp-validation-for="BookCategoryId"></span>
+            <div class="edit">
                 <label asp-for="Title"></label>
                 <input asp-for="Title"/>
-                <span asp-validation-for="Title"></span>
             </div>
-            <div class="form-group">
+            <span asp-validation-for="Title"></span>
+            <div class="edit">
                 <label asp-for="Author"></label>
                 <input asp-for="Author"/>
+            </div class="edit">    
                 <span asp-validation-for="Author"></span>
-            </div>
-            <div class="form-group">
+            <div class="edit">
                 <label asp-for="Publisher"></label>
                 <input asp-for="Publisher"/>
+            </div class="edit">    
                 <span asp-validation-for="Publisher"></span>
-            </div>
-            <div class="form-group">
+            <div class="edit">
                 <label asp-for="PublishYear"></label>
                 <input asp-for="PublishYear"/>
-                <span asp-validation-for="PublishYear"></span>
-            </div>
-            <div class="form-group">
+            </div class="edit">
+            <span asp-validation-for="PublishYear"></span>
+            <div class="edit">
                 <label asp-for="ISBN"></label>
                 <input asp-for="ISBN"/>
-                <span asp-validation-for="ISBN"></span>
-            </div>
-            <div class="form-group">
+            </div class="edit">
+            <span asp-validation-for="ISBN"></span>
+            <div class="edit">
                 <label asp-for="Price"></label>
                 <input asp-for="Price"/>
-                <span asp-validation-for="Price"></span>
             </div>
-            <div class="form-group">
+            <span asp-validation-for="Price"></span>
+            <div class="edit">
                 <label asp-for="Description"></label>
                 <input asp-for="Description"/>
-                <span asp-validation-for="Description"></span>
             </div>
-            <div class="form-group">
+                <span asp-validation-for="Description"></span>
+            <div>
                 <input type="submit" value="Save"/>
             </div>
         </form>

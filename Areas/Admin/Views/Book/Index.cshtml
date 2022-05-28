@@ -5,7 +5,9 @@
     BookstoreContext context = (BookstoreContext)ViewData["Context"];
     ViewData["Header"] = "Books";
 }
-<p class="warnHeader">ADMIN</p>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
 <table class="table">
     <thead>
         <tr>

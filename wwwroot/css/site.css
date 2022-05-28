@@ -77,9 +77,22 @@ a {
     max-width: max-content;
     margin: 1vh;
 }
+.edit {
+    width: 40vh;
+    position: relative;
+    clear: both;
+}
 .edit label {
+    position: absolute;
+    left: 0%;
     font-weight: bold;
-    clear: right;
+    display: grid;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.edit input {
+    position: absolute;
+    right: 100%;
 }
 #sideNav {
     
