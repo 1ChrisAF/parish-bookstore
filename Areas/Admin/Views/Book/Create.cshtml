@@ -52,9 +52,11 @@
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+            <div>
                 <label asp-for="Image"></label>
                 <input type="file" asp-for="Image">
                 <span asp-validation-for="Image"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

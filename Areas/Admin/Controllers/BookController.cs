@@ -74,7 +74,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 _context.Add(book);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
             }
             return View(book);
         }
@@ -129,7 +129,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
             }
             return View(book);
         }

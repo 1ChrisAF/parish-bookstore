@@ -6,84 +6,74 @@
     ViewData["Header"] = "Book Details";
 }
 
-
-<style>
-.column {
-  float: left;
-  widivh: 50%;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-</style>
-
-<div class="row">
+<div class="imageContainer">
+    <img src="~/media/images/@Model.ImageName">
+</div>
+<div class="detailsContainer">
+    <div class="row">
         <div class="labelColumn">
             @Html.DisplayNameFor(model => model.BookCategoryId)
         </div>
         <div class="column">
             @context.BookCategories.Find(Model.BookCategoryId).CategoryName.ToString()
         </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.Title)
-        </div>
-        <div class="column" >
-            @Html.DisplayFor(model => model.Title)
-        </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.Author)
-        </div>
-        <div class="column" >
-            @Html.DisplayFor(model => model.Author)
-        </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.Publisher)
-        </div>
-        <div class="column">
-            @Html.DisplayFor(model => model.Publisher)
-        </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.PublishYear)
-        </div>
-        <div class="column">
-            @Html.DisplayFor(model => model.PublishYear)
-        </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.ISBN)
-        </div>
-        <div class="column">
-            @Html.DisplayFor(model => model.ISBN)
-        </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.Price)
-        </div>
-        <div class="column">
-            @Html.DisplayFor(model => model.Price)
-        </div>
-</div>
-<div class="row">
-        <div class="labelColumn">
-            @Html.DisplayNameFor(model => model.Description)
-        </div>
-        <div class="column">
-            @Html.DisplayFor(model => model.Description)
-        </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Title)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Title)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Author)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Author)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Publisher)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Publisher)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.PublishYear)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.PublishYear)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.ISBN)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.ISBN)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+    </div>
 </div>
 <br>
 <div>
