@@ -64,6 +64,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
             ViewData["Context"] = _context;
+            book.setFileName();
             if (ModelState.IsValid)
             {
                 _context.Add(book);
@@ -98,6 +99,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
         {
             ViewData["Context"] = _context;
+            book.setFileName();
             if (id != book.BookId)
             {
                 return NotFound();

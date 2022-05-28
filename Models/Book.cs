@@ -27,14 +27,15 @@ public class Book
     public decimal Price {get; set;}
     public string? Description {get; set;}
 
-    [NotMapped]
-    public Image Image {get; set;}
+    public string FileName {get; set;}
 
-    private string fileName;
-    public string FileName
+    [NotMapped]
+    public Image BookImage {get; set;}
+
+    
+    public void setFileName()
     {
-        get { return fileName; }
-        set { fileName = Image.FileName; }
+        this.FileName = BookImage.FileName;
     }
     
 }
