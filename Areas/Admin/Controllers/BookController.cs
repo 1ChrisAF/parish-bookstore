@@ -61,10 +61,10 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description")] Book book)
+        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description,BookImage")] Book book)
         {
             ViewData["Context"] = _context;
-            book.setFileName();
+            
             if (ModelState.IsValid)
             {
                 _context.Add(book);

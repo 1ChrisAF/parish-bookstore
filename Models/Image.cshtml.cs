@@ -11,19 +11,13 @@ namespace parish_bookstore.Models
 {
     public class ImageModel : PageModel
     {
-        private readonly long _fileSizeLimit;
+        private readonly long _fileSizeLimit = 2097152;
         private readonly string[] _permittedExtensions = { ".txt" };
-        private readonly string _targetFilePath;
+        private readonly string _targetFilePath = "c:\\users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\media\\images";
 
-        public ImageModel(IConfiguration config)
+        public ImageModel()
         {
-            _fileSizeLimit = config.GetValue<long>("FileSizeLimit");
-
-            // To save physical files to a path provided by configuration:
-            _targetFilePath = config.GetValue<string>("StoredFilesPath");
-
-            // To save physical files to the temporary files folder, use:
-            //_targetFilePath = Path.GetTempPath();
+            
         }
 
         [BindProperty]

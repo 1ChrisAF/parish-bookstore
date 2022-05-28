@@ -54,11 +54,11 @@
             </div>
             <dl>
                 <dt>
-                    <label asp-for="BookImage"></label>
+                    <label asp-for="BookImage.FileUpload.FormFile"></label>
                 </dt>
                 <dd>
-                    <input asp-for="BookImage" type="file" />
-                    <span asp-validation-for="BookImage"></span>
+                    <input asp-for="BookImage.FileUpload.FormFile" type="file" />
+                    <span asp-validation-for="BookImage.FileUpload.FormFile"></span>
                 </dd>
             </dl>
             <div class="form-group">

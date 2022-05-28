@@ -30,12 +30,12 @@ public class Book
     public string FileName {get; set;}
 
     [NotMapped]
-    public Image BookImage {get; set;}
+    public ImageModel BookImage {get; set;}
 
     
     public void setFileName()
     {
-        this.FileName = BookImage.FileName;
+        this.FileName = BookImage.FileUpload.FileName;
     }
     
 }
