@@ -72,27 +72,41 @@ a {
     color: white;
     background-color: red;
     border-radius: 10px;
-    border: 2px solid white;
+    border: 2px solid black;
     padding: 1vh;
     max-width: max-content;
     margin: 1vh;
 }
-.edit {
-    width: 40vh;
-    position: relative;
-    clear: both;
-}
-.edit label {
-    position: absolute;
-    left: 0%;
+.column {
+    float: left;
+    width: 15vh;
     font-weight: bold;
-    display: grid;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    padding-bottom: .5vh;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+.submitButton {
+      padding: .5vh 1vh;
+      margin: 1vh;
+  }
+.backToIndex {
+      padding: .5vh 1vh;
+      margin: 1vh;
+      font-weight: bold;
+      border: 1px solid black;
+      border-radius: 5px;
+      color: white;
+      background-color: #647C96;
+  }
+.backToIndex a {
+    color: white;
 }
-.edit input {
-    position: absolute;
-    right: 100%;
+.backToIndex a:visited {
+    color: white;
 }
 #sideNav {
     

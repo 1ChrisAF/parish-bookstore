@@ -17,6 +17,7 @@ public class Book
     [Required(ErrorMessage ="Book publisher is required!")]
     public string Publisher {get; set;}
     [Required(ErrorMessage ="Book publish year is required!")]
+    [Display(Name = "Year Pubished")]
     public int PublishYear {get; set;}
     [Required(ErrorMessage ="Book ISBN is required!")]
     public int ISBN {get; set;}
