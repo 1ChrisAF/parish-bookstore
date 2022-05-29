@@ -87,21 +87,20 @@
 					<textarea asp-for="Description" rows="3" cols="40"></textarea>
 					<span asp-validation-for="Description"></span>
             </div>
-            <div class = row>
+            <div class = "row">
                 <label asp-for="Image"></label>
                 <input type="file" asp-for="Image">
                 <span asp-validation-for="Image"></span>
             </div>
-			<div>
-                <input type="submit" class="submitButton" value="Save Changes"/>
+			<div class = "row">
+                <input type="submit" class="submitButton" value="Save Changes"/> | 
+                <a asp-action="Index" class="backToIndex"> &larr; Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
