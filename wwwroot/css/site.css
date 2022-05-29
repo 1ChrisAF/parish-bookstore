@@ -170,6 +170,27 @@ a {
       padding: .5vh 1vh;
       margin: 1vh;
 }
+.deleteHeader {
+    font-family: sans-serif;
+    padding: .5vh 1vh;
+    margin: 1vh;
+    max-width: max-content;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+}
+.delete {
+    cursor: pointer;
+    padding: .75em;
+    margin: 1em;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+}
 .backToIndex {
       padding: .5vh 1vh;
       margin: 1vh;
@@ -195,6 +216,7 @@ a {
 }
 .detailsContainer {
     float: left;
+    padding-left: 1vh;
 }
 .table {
     border: 1px solid black;

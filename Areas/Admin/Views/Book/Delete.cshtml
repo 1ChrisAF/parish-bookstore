@@ -1,68 +1,88 @@
 @model parish_bookstore.Models.Book
 
 @{
-    ViewData["Title"] = "Delete Book";
+    ViewData["Title"] = "Remove Book";
     BookstoreContext context = (BookstoreContext)ViewData["Context"];
-    ViewData["Header"] = "Delete Book";
+    ViewData["Header"] = "Remove Book";
 }
 
-<p class="warnHeader">ADMIN</p>
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <dl>
-        <dt>
-            @Html.DisplayNameFor(model => model.BookCategoryId)
-        </dt>
-        <dd>
-            @context.BookCategories.Find(Model.BookCategoryId).CategoryName.ToString()
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Author)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Author)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Publisher)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Publisher)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.PublishYear)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.PublishYear)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ISBN)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.ISBN)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="BookId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<h3 class="deleteHeader">Are you SURE you want to DELETE this?</h3>
+
+<div class="imageContainer">
+    <img src="~/media/images/@Model.ImageName">
 </div>
+<div class="detailsContainer">
+    <div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.BookCategoryId)
+        </div>
+        <div class="column">
+            @context.BookCategories.Find(Model.BookCategoryId).CategoryName.ToString()
+        </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Title)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Title)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Author)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Author)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Publisher)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Publisher)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.PublishYear)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.PublishYear)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.ISBN)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.ISBN)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+    </div>
+    <div class="row, stageButtons">
+        <form asp-action="Delete">
+			<input type="hidden" asp-for="BookId" />
+			<input type="submit" value="Delete" class="delete"/> |
+			<a asp-action="Index" class="backToIndex">Back to List</a>
+    </form>
+    </div>
+</div>
+<br>
+
