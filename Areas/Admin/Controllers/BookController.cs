@@ -95,7 +95,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             }
             return View(book);
         }
-
+        
         // POST: Book/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -104,12 +104,22 @@ namespace parish_bookstore.Areas.Admin.Controllers
         public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description,Image")] Book book)
         {
             ViewData["Context"] = _context;
-            string trustedFileName = UploadedFile(book);
-            book.ImageName = trustedFileName;
+            if (book.Image == null) 
+            {
+                book.Image = imageBridge;
+                book.ImageName = bookBridge;
+            }
+            else
+            {
+                string trustedFileName = UploadedFile(book);
+                book.ImageName = trustedFileName;
+            }
+            
             if (id != book.BookId)
             {
                 return NotFound();
             }
+            
             
             if (ModelState.IsValid)
             {
