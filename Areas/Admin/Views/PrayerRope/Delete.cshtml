@@ -1,45 +1,56 @@
 @model parish_bookstore.Models.PrayerRope
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Remove Rope";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    ViewData["Header"] = "Remove Prayer Rope";
 }
 
-<h1>Delete</h1>
+<h3 class="deleteHeader">Are you SURE you want to DELETE this?</h3>
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>PrayerRope</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.KnotCount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KnotCount)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Material)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Material)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="PrayerRopeId" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+<div class="imageContainer">
+    <img src="~/media/images/@Model.ImageName">
 </div>
+<div class="detailsContainer">
+    <div class="row">
+        <div class="labelColumn">
+            @Html.DisplayNameFor(model => model.KnotCount)
+        </div>
+        <div class="column">
+            @Html.DisplayFor(model => model.KnotCount)
+        </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Material)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Material)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+    </div>
+    <div class="row, stageButtons">
+        <form asp-action="Delete">
+			<input type="hidden" asp-for="PrayerRopeId" />
+			<input type="submit" value="Delete" class="delete"/> |
+			<a asp-action="Index" class="backToIndex">Back to List</a>
+    </form>
+    </div>
+</div>
+<br>
+
