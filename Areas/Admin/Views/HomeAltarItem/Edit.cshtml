@@ -13,13 +13,19 @@
 			<input type="hidden" asp-for="HomeAltarItemId"/>
             <div class="row">
                 <div class="labelColumn">
-					<label asp-for="CategoryId"></label>
+                    <label asp-for="CategoryId"></label>
                 </div>
-				<div class="column">
-					<input asp-for="CategoryId"/>
-					<span asp-validation-for="CategoryId"></span>
-				</div>
-			</div>
+                <div class="column">
+                    <select asp-for="CategoryId">
+                    <option value="">Select a Category</option>
+                        @foreach (HomeAltarItemCategory ic in context.AltarItemCategories)
+                        {
+                            <option value="@ic.HomeAltarItemCategoryId">@ic.CategoryName</option>
+                        }
+                    </select>
+                    <span asp-validation-for="BookCategoryId"></span>
+                </div>
+		    </div>
 			<div class="row">
                 <div class="labelColumn">
 					<label asp-for="Name"></label>
@@ -52,9 +58,10 @@
                 <input type="file" asp-for="Image">
                 <span asp-validation-for="Image"></span>
             </div>
-			<div>
+			<div class = "row">
+                <a asp-action="Index" class="backToIndex"> &larr; Back to List</a> |
                 <input type="submit" class="submitButton" value="Save Changes"/>
-            </div>
+		    </div>
         </form>
     </div>
 </div>
