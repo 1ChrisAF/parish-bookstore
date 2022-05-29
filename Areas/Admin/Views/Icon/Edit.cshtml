@@ -1,47 +1,66 @@
 @model parish_bookstore.Models.Icon
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Name"] = "Edit Icon";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    ViewData["Header"] = "Edit Icon";
 }
 
-<h1>Edit</h1>
-
-<h4>Icon</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IconId" />
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
+<div>
+    <div>
+        <form enctype="multipart/form-data" asp-action="Edit">
+			<div asp-validation-summary="ModelOnly"></div>
+			<input type="hidden" asp-for="IconId"/>
+            <div class="row">
+                <div class="labelColumn">
+					<label asp-for="CategoryId"></label>
+                </div>
+				<div class="column">
+					<input asp-for="CategoryId"/>
+					<span asp-validation-for="CategoryId"></span>
+				</div>
+			</div>
+			<div class="row">
+                <div class="labelColumn">
+					<label asp-for="Name"></label>
+                </div>
+            	<div class="column">
+					<input asp-for="Name"/>
+					<span asp-validation-for="Name"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+			<div class="row">
+                <div class="labelColumn">
+					<label asp-for="Price"></label>
+                </div>
+            	<div class="column">
+					<input asp-for="Price"/>
+					<span asp-validation-for="Price"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
+			<div class="row">
+                <div class="labelColumn">
+					<label asp-for="Description"></label>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+            <div class="row">
+					<textarea asp-for="Description" rows="3" cols="40"></textarea>
+					<span asp-validation-for="Description"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+            <div class = row>
+                <label asp-for="Image"></label>
+                <input type="file" asp-for="Image">
+                <span asp-validation-for="Image"></span>
+            </div>
+			<div>
+                <input type="submit" class="submitButton" value="Save Changes"/>
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="backToIndex"> &larr; Back to List</a>
 </div>
 
 @section Scripts {
