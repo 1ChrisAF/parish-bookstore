@@ -1,49 +1,70 @@
 @model parish_bookstore.Models.HomeAltarItem
 
 @{
-    ViewData["Name"] = "Create Item";
-    ViewData["Header"] = "Create Item";
+    ViewData["Title"] = "Create Altar Item";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    ViewData["Header"] = "Create Home Altar Item";
 }
 
 <div>
-    <div>
-        <form enctype="multipart/form-data" asp-action="Create">
-            <div asp-validation-summary="ModelOnly"></div>
-            <div>
-                <label asp-for="CategoryId"></label>
-                <input asp-for="CategoryId" />
-                <span asp-validation-for="CategoryId"></span>
+    <form enctype="multipart/form-data" asp-action="Create">
+			<div asp-validation-summary="ModelOnly"></div>
+            <div class="row">
+                <div class="labelColumn">
+					<label asp-for="CategoryId"></label>
+                </div>
+				<div class="column">
+					<select asp-for="CategoryId">
+                    <option value="">Select a Category</option>
+                    @foreach (HomeAltarItemCategory ic in context.AltarItemCategories)
+                    {
+                        <option value="@ic.GeneralItemCategoryId">@ic.CategoryName</option>
+                    }
+                </select>
+					<span asp-validation-for="CategoryId"></span>
+				</div>
+			</div>
+			<div class="row">
+                <div class="labelColumn">
+					<label asp-for="Name"></label>
+                </div>
+            	<div class="column">
+					<input asp-for="Name"/>
+					<span asp-validation-for="Name"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Name"></label>
-                <input asp-for="Name" />
-                <span asp-validation-for="Name"></span>
+			<div class="row">
+                <div class="labelColumn">
+					<label asp-for="Price"></label>
+                </div>
+            	<div class="column">
+					<input asp-for="Price"/>
+					<span asp-validation-for="Price"></span>
+                </div>
             </div>
-            <div>
-                <label asp-for="Price"></label>
-                <input asp-for="Price" />
-                <span asp-validation-for="Price"></span>
+			<div class="row">
+                <div class="labelColumn">
+					<label asp-for="Description"></label>
+                </div>
             </div>
-            <div>
-                <label asp-for="Description"></label>
-                <input asp-for="Description" />
-                <span asp-validation-for="Description"></span>
+            <div class="row">
+					<textarea asp-for="Description" rows="3" cols="40"></textarea>
+					<span asp-validation-for="Description"></span>
             </div>
-            <div>
+            <div class = "row">
                 <label asp-for="Image"></label>
                 <input type="file" asp-for="Image">
                 <span asp-validation-for="Image"></span>
             </div>
-            <div>
-                <input type="submit" value="Create"/>
+			<div class = "row">
+                <input type="submit" class="submitButton" value="Save Changes"/> | 
+                <a asp-action="Index" class="backToIndex"> &larr; Back to List</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
