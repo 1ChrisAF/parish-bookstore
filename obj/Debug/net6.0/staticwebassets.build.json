@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "VcGG826+94+bY9qHAdSLh8alNqHNldaCFaZ3EsL2LXg=",
+  "Hash": "gFjSbh4/GPUj3LUq7nagwV5VbmRDZtPzhp/zQ1DtfnY=",
   "Source": "parish-bookstore",
   "BasePath": "_content/parish-bookstore",
   "Mode": "Default",
@@ -1443,6 +1443,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\images\\4acbde91-7302-44ed-89b2-38935e70d745.png"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\media\\images\\67e11973-522b-4354-b09b-6fd9629cc355.png",
+      "SourceId": "parish-bookstore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\",
+      "BasePath": "_content/parish-bookstore",
+      "RelativePath": "media/images/67e11973-522b-4354-b09b-6fd9629cc355.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\images\\67e11973-522b-4354-b09b-6fd9629cc355.png"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\media\\images\\fa84a76a-48d0-442b-9886-1f516c4ad8a5.png",
+      "SourceId": "parish-bookstore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\",
+      "BasePath": "_content/parish-bookstore",
+      "RelativePath": "media/images/fa84a76a-48d0-442b-9886-1f516c4ad8a5.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\images\\fa84a76a-48d0-442b-9886-1f516c4ad8a5.png"
     }
   ]
 }
