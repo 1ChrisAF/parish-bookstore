@@ -13,10 +13,12 @@ namespace parish_bookstore.Areas.Admin.Controllers
     public class HomeAltarItemController : Controller
     {
         private readonly BookstoreContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public HomeAltarItemController(BookstoreContext context)
+        public HomeAltarItemController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: HomeAltarItem
@@ -59,14 +61,16 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Description,Image")] HomeAltarItem homeAltarItem)
         {
+            string trustedFileName = UploadedFile(homeAltarItem);
+            homeAltarItem.ImageName = trustedFileName;
             ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
                 _context.Add(homeAltarItem);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { id = homeAltarItem.HomeAltarItemId});
             }
             return View(homeAltarItem);
         }
@@ -93,8 +97,10 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Description")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Description,Image")] HomeAltarItem homeAltarItem)
         {
+            string trustedFileName = UploadedFile(homeAltarItem);
+            homeAltarItem.ImageName = trustedFileName;
             ViewData["Context"] = _context;
             if (id != homeAltarItem.HomeAltarItemId)
             {
@@ -119,7 +125,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { id = homeAltarItem.HomeAltarItemId});
             }
             return View(homeAltarItem);
         }
@@ -161,6 +167,37 @@ namespace parish_bookstore.Areas.Admin.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private string UploadedFile(HomeAltarItem item)  
+        {  
+            string uniqueFileName = null;  
+
+            if (item.Image != null)  
+            {  
+                string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, @"media\images");  
+                string fileName = item.Image.FileName;
+                string fileExtension = "";
+                Boolean isExtension = false;
+                foreach (char c in fileName) 
+                {
+                    if (c == '.')
+                    {
+                        isExtension = true;
+                    }
+                    if(isExtension)
+                    {
+                        fileExtension += c;
+                    }
+                }
+                uniqueFileName = Guid.NewGuid().ToString() + fileExtension;  
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);  
+                using (var fileStream = new FileStream(filePath, FileMode.Create))  
+                {  
+                    item.Image.CopyTo(fileStream);  
+                }  
+            }  
+            return uniqueFileName;  
         }
 
         private bool HomeAltarItemExists(int id)

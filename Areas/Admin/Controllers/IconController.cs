@@ -13,10 +13,12 @@ namespace parish_bookstore.Areas.Admin.Controllers
     public class IconController : Controller
     {
         private readonly BookstoreContext _context;
+        private readonly IWebHostEnvironment _hostEnvironment;
 
-        public IconController(BookstoreContext context)
+        public IconController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
+            _hostEnvironment = hostEnvironment;
         }
 
         // GET: Icon
@@ -59,14 +61,16 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IconId,CategoryId,Name,Price,Description")] Icon icon)
+        public async Task<IActionResult> Create([Bind("IconId,CategoryId,Name,Price,Description,Image")] Icon icon)
         {
+            string trustedFileName = UploadedFile(icon);
+            icon.ImageName = trustedFileName;
             ViewData["Context"] = _context;
             if (ModelState.IsValid)
             {
                 _context.Add(icon);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { id = icon.IconId});
             }
             return View(icon);
         }
@@ -93,8 +97,10 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IconId,CategoryId,Name,Price,Description")] Icon icon)
+        public async Task<IActionResult> Edit(int id, [Bind("IconId,CategoryId,Name,Price,Description,Image")] Icon icon)
         {
+            string trustedFileName = UploadedFile(icon);
+            icon.ImageName = trustedFileName;
             ViewData["Context"] = _context;
             if (id != icon.IconId)
             {
@@ -119,7 +125,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", new { id = icon.IconId});
             }
             return View(icon);
         }
@@ -161,6 +167,37 @@ namespace parish_bookstore.Areas.Admin.Controllers
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+        }
+
+        private string UploadedFile(Icon icon)  
+        {  
+            string uniqueFileName = null;  
+
+            if (icon.Image != null)  
+            {  
+                string uploadsFolder = Path.Combine(_hostEnvironment.WebRootPath, @"media\images");  
+                string fileName = icon.Image.FileName;
+                string fileExtension = "";
+                Boolean isExtension = false;
+                foreach (char c in fileName) 
+                {
+                    if (c == '.')
+                    {
+                        isExtension = true;
+                    }
+                    if(isExtension)
+                    {
+                        fileExtension += c;
+                    }
+                }
+                uniqueFileName = Guid.NewGuid().ToString() + fileExtension;  
+                string filePath = Path.Combine(uploadsFolder, uniqueFileName);  
+                using (var fileStream = new FileStream(filePath, FileMode.Create))  
+                {  
+                    icon.Image.CopyTo(fileStream);  
+                }  
+            }  
+            return uniqueFileName;  
         }
 
         private bool IconExists(int id)
