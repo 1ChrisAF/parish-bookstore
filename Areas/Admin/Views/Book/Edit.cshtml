@@ -94,7 +94,7 @@
 		</div>
 		<div class = "row">
 			<label asp-for="Image"></label>
-			<input type="file" asp-for="Image">
+			<input type="file" asp-for="Image" value="~/media/images/@Model.ImageName">
 			<span asp-validation-for="Image"></span>
 		</div>
 		<div class = "row">
