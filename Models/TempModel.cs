@@ -7,7 +7,7 @@ namespace parish_bookstore.Models;
 * I am not entirely pleased with this, but this is the best I've got
 * so far. 
 *
-* I was having trouble with the Edit View of the Book (and thus other)
+* I was having trouble with the Edit View of the Book (and thus others)
 * model. If an image already exists for the Book, the page will still
 * require that a new image be submitted, even if it's just a copy of
 * the existing image. Making the field nullable was not satisfactory, 
@@ -27,7 +27,7 @@ namespace parish_bookstore.Models;
 * bookstore, such a scenario is not likely to materialize. 
 *
 * Given my experience with users, though, and their odd skill at 
-* instantiating the exact but one thought could never happen, I will
+* instantiating the exact bug one thought could never happen, I will
 * tie up this loose end, and also because I am not content with such
 * a loose end existing, on principle.
 *
