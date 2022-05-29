@@ -43,7 +43,6 @@ namespace parish_bookstore.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ImageName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Price")
@@ -349,6 +348,30 @@ namespace parish_bookstore.Migrations
                     b.HasKey("PrayerRopeId");
 
                     b.ToTable("PrayerRopes");
+                });
+
+            modelBuilder.Entity("parish_bookstore.Models.TempModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ImageName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Temp");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ImageName = ""
+                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -20,6 +20,8 @@ public class BookstoreContext : DbContext
     public DbSet<GeneralItem> GeneralItems {get; set;}
     public DbSet<GeneralItemCategory> GeneralItemCategories {get; set;}
 
+    public DbSet<TempModel> Temp {get; set;}
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Added because decorators in models weren't satisfying the type warns
@@ -37,6 +39,9 @@ public class BookstoreContext : DbContext
         // ***
 
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<TempModel>().HasData(
+            new TempModel {Id = 1, ImageName = ""}
+        );
         modelBuilder.Entity<BookCategory>().HasData(
             new BookCategory {BookCategoryId = 1, CategoryName = "Prayer & Service Books"},
             new BookCategory {BookCategoryId = 2, CategoryName = "Fathers & Patristics"},

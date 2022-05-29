@@ -65,7 +65,7 @@ namespace parish_bookstore.Migrations
                     ISBN = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -149,6 +149,19 @@ namespace parish_bookstore.Migrations
                     table.PrimaryKey("PK_PrayerRopes", x => x.PrayerRopeId);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Temp",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Temp", x => x.Id);
+                });
+
             migrationBuilder.InsertData(
                 table: "AltarItemCategories",
                 columns: new[] { "HomeAltarItemCategoryId", "CategoryName" },
@@ -193,6 +206,11 @@ namespace parish_bookstore.Migrations
                     { 4, "Saints" },
                     { 5, "Feasts" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Temp",
+                columns: new[] { "Id", "ImageName" },
+                values: new object[] { 1, "" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -223,6 +241,9 @@ namespace parish_bookstore.Migrations
 
             migrationBuilder.DropTable(
                 name: "PrayerRopes");
+
+            migrationBuilder.DropTable(
+                name: "Temp");
         }
     }
 }

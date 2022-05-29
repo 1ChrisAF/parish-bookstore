@@ -93,6 +93,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            TempModel temp = new TempModel();
+            temp.Id = 1;
+            temp.ImageName = book.ImageName;
+            _context.Update(temp);
+            _context.SaveChanges();
             return View(book);
         }
         
@@ -106,8 +111,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             ViewData["Context"] = _context;
             if (book.Image == null) 
             {
-                book.Image = imageBridge;
-                book.ImageName = bookBridge;
+               book.ImageName = _context.Temp.Find(1).ImageName;
             }
             else
             {
