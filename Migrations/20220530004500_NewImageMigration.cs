@@ -28,8 +28,10 @@ namespace parish_bookstore.Migrations
                     HomeAltarItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Bookie = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -65,6 +67,7 @@ namespace parish_bookstore.Migrations
                     PublishYear = table.Column<int>(type: "int", nullable: false),
                     ISBN = table.Column<int>(type: "int", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
@@ -93,8 +96,10 @@ namespace parish_bookstore.Migrations
                     GeneralItemId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Bookie = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -123,8 +128,10 @@ namespace parish_bookstore.Migrations
                     IconId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
+                    Bookie = table.Column<int>(type: "int", nullable: false),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -139,9 +146,11 @@ namespace parish_bookstore.Migrations
                 {
                     PrayerRopeId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    Bookie = table.Column<int>(type: "int", nullable: false),
                     KnotCount = table.Column<int>(type: "int", nullable: false),
                     Material = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Price = table.Column<decimal>(type: "decimal(18,2)", precision: 18, scale: 2, nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },

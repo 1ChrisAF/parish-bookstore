@@ -11,7 +11,7 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220529235023_NewImageMigration")]
+    [Migration("20220530004500_NewImageMigration")]
     partial class NewImageMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,6 +60,9 @@ namespace parish_bookstore.Migrations
                     b.Property<string>("Publisher")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -122,6 +125,9 @@ namespace parish_bookstore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GeneralItemId"), 1L, 1);
 
+                    b.Property<int>("Bookie")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -139,6 +145,9 @@ namespace parish_bookstore.Migrations
                     b.Property<decimal>("Price")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("GeneralItemId");
 
@@ -187,6 +196,9 @@ namespace parish_bookstore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HomeAltarItemId"), 1L, 1);
 
+                    b.Property<int>("Bookie")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -204,6 +216,9 @@ namespace parish_bookstore.Migrations
                     b.Property<decimal>("Price")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("HomeAltarItemId");
 
@@ -257,6 +272,9 @@ namespace parish_bookstore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IconId"), 1L, 1);
 
+                    b.Property<int>("Bookie")
+                        .HasColumnType("int");
+
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
@@ -274,6 +292,9 @@ namespace parish_bookstore.Migrations
                     b.Property<decimal>("Price")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("IconId");
 
@@ -332,6 +353,9 @@ namespace parish_bookstore.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PrayerRopeId"), 1L, 1);
 
+                    b.Property<int>("Bookie")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -349,6 +373,9 @@ namespace parish_bookstore.Migrations
                     b.Property<decimal>("Price")
                         .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
 
                     b.HasKey("PrayerRopeId");
 
