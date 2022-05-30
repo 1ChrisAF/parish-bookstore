@@ -26,6 +26,6 @@ public class Icon
   
     [Display(Name = "Image")]  
     [NotMapped]
-    public IFormFile Image { get; set; }
+    public IFormFile? Image { get; set; }
 
 }
