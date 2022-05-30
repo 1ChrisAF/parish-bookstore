@@ -14,6 +14,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
     {
         private readonly BookstoreContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
+        private Random rand = new Random();
 
         public HomeAltarItemController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
@@ -61,7 +62,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Description,Image")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Create([Bind("HomeAltarItemId,CategoryId,Name,Price,Quantity,Description,Image")] HomeAltarItem homeAltarItem)
         {
             string trustedFileName = UploadedFile(homeAltarItem);
             homeAltarItem.ImageName = trustedFileName;
@@ -89,7 +90,38 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            createBookie(homeAltarItem);
             return View(homeAltarItem);
+        }
+
+        // See note in TempModel. Bookie allows for 
+        // model editing w/o uploading a new image;
+        // allows original image to persist if no
+        // new image was uploaded. 
+        private void createBookie(HomeAltarItem homeAltarItem)
+        {
+            TempModel temp = new TempModel();
+            int bookie = rand.Next(100);
+            while (bookie <= 0) 
+            {
+                bookie = rand.Next(100);
+            }
+            temp.Id = bookie;
+            temp.ImageName = homeAltarItem.ImageName;
+            homeAltarItem.Bookie = bookie;
+            _context.Add(temp);
+            _context.Update(homeAltarItem);
+            _context.Database.OpenConnection();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] ON");
+            _context.SaveChanges();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] OFF");
+            _context.Database.CloseConnection();
+        }
+
+        private void deleteBookie(HomeAltarItem homeAltarItem)
+        {
+            _context.Temp.Remove(_context.Temp.Find(homeAltarItem.Bookie));
+            _context.SaveChanges();
         }
 
         // POST: HomeAltarItem/Edit/5
@@ -97,11 +129,20 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Description,Image")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Quantity,Description,Image")] HomeAltarItem homeAltarItem)
         {
-            string trustedFileName = UploadedFile(homeAltarItem);
-            homeAltarItem.ImageName = trustedFileName;
             ViewData["Context"] = _context;
+            if (homeAltarItem.Image == null) 
+            {
+               homeAltarItem.ImageName = _context.Temp.Find(homeAltarItem.Bookie).ImageName;
+               deleteBookie(homeAltarItem);
+            }
+            else
+            {
+                string trustedFileName = UploadedFile(homeAltarItem);
+                homeAltarItem.ImageName = trustedFileName;
+            }
+
             if (id != homeAltarItem.HomeAltarItemId)
             {
                 return NotFound();

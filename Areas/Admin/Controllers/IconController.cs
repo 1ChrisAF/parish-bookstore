@@ -14,6 +14,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
     {
         private readonly BookstoreContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
+        private Random rand = new Random();
 
         public IconController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
@@ -61,7 +62,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IconId,CategoryId,Name,Price,Description,Image")] Icon icon)
+        public async Task<IActionResult> Create([Bind("IconId,CategoryId,Name,Price,Quantity,Description,Image")] Icon icon)
         {
             string trustedFileName = UploadedFile(icon);
             icon.ImageName = trustedFileName;
@@ -89,7 +90,38 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            createBookie(icon);
             return View(icon);
+        }
+
+        // See note in TempModel. Bookie allows for 
+        // model editing w/o uploading a new image;
+        // allows original image to persist if no
+        // new image was uploaded. 
+        private void createBookie(Icon icon)
+        {
+            TempModel temp = new TempModel();
+            int bookie = rand.Next(100);
+            while (bookie <= 0) 
+            {
+                bookie = rand.Next(100);
+            }
+            temp.Id = bookie;
+            temp.ImageName = icon.ImageName;
+            icon.Bookie = bookie;
+            _context.Add(temp);
+            _context.Update(icon);
+            _context.Database.OpenConnection();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] ON");
+            _context.SaveChanges();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] OFF");
+            _context.Database.CloseConnection();
+        }
+
+        private void deleteBookie(Icon icon)
+        {
+            _context.Temp.Remove(_context.Temp.Find(icon.Bookie));
+            _context.SaveChanges();
         }
 
         // POST: Icon/Edit/5
@@ -97,11 +129,20 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IconId,CategoryId,Name,Price,Description,Image")] Icon icon)
+        public async Task<IActionResult> Edit(int id, [Bind("IconId,CategoryId,Name,Price,Quantity,Description,Image")] Icon icon)
         {
-            string trustedFileName = UploadedFile(icon);
-            icon.ImageName = trustedFileName;
             ViewData["Context"] = _context;
+            if (icon.Image == null) 
+            {
+               icon.ImageName = _context.Temp.Find(icon.Bookie).ImageName;
+               deleteBookie(icon);
+            }
+            else
+            {
+                string trustedFileName = UploadedFile(icon);
+                icon.ImageName = trustedFileName;
+            }
+
             if (id != icon.IconId)
             {
                 return NotFound();

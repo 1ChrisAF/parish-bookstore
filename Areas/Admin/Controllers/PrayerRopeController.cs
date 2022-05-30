@@ -14,6 +14,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
     {
         private readonly BookstoreContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
+        private Random rand = new Random();
 
         public PrayerRopeController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
@@ -58,7 +59,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PrayerRopeId,KnotCount,Material,Price,Description,Image")] PrayerRope prayerRope)
+        public async Task<IActionResult> Create([Bind("PrayerRopeId,KnotCount,Material,Price,Quantity,Description,Image")] PrayerRope prayerRope)
         {
             string trustedFileName = UploadedFile(prayerRope);
             prayerRope.ImageName = trustedFileName;
@@ -84,7 +85,38 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            createBookie(prayerRope);
             return View(prayerRope);
+        }
+
+        // See note in TempModel. Bookie allows for 
+        // model editing w/o uploading a new image;
+        // allows original image to persist if no
+        // new image was uploaded. 
+        private void createBookie(PrayerRope prayerRope)
+        {
+            TempModel temp = new TempModel();
+            int bookie = rand.Next(100);
+            while (bookie <= 0) 
+            {
+                bookie = rand.Next(100);
+            }
+            temp.Id = bookie;
+            temp.ImageName = prayerRope.ImageName;
+            prayerRope.Bookie = bookie;
+            _context.Add(temp);
+            _context.Update(prayerRope);
+            _context.Database.OpenConnection();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] ON");
+            _context.SaveChanges();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] OFF");
+            _context.Database.CloseConnection();
+        }
+
+        private void deleteBookie(PrayerRope prayerRope)
+        {
+            _context.Temp.Remove(_context.Temp.Find(prayerRope.Bookie));
+            _context.SaveChanges();
         }
 
         // POST: PrayerRope/Edit/5
@@ -92,10 +124,19 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PrayerRopeId,KnotCount,Material,Price,Description,Image")] PrayerRope prayerRope)
+        public async Task<IActionResult> Edit(int id, [Bind("PrayerRopeId,KnotCount,Material,Price,Quantity,Description,Image")] PrayerRope prayerRope)
         {
-            string trustedFileName = UploadedFile(prayerRope);
-            prayerRope.ImageName = trustedFileName;
+            if (prayerRope.Image == null) 
+            {
+               prayerRope.ImageName = _context.Temp.Find(prayerRope.Bookie).ImageName;
+               deleteBookie(prayerRope);
+            }
+            else
+            {
+                string trustedFileName = UploadedFile(prayerRope);
+                prayerRope.ImageName = trustedFileName;
+            }
+
             if (id != prayerRope.PrayerRopeId)
             {
                 return NotFound();
