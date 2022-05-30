@@ -9,8 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-bin/
-obj/
+parish-bookstore\bin
+parish-bookstore\obj
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
