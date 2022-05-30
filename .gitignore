@@ -9,8 +9,7 @@
 *.user
 *.userosscache
 *.sln.docstates
-parish-bookstore\bin
-parish-bookstore\obj
+
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -398,3 +397,7 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+obj/staticwebassets.pack.sentinel
+obj/Debug/net6.0/project.razor.json
+obj/staticwebassets.pack.sentinel
+obj/Debug/net6.0/project.razor.json
