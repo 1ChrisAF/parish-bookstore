@@ -145,6 +145,33 @@ a {
     float: right;
     padding: 0 2vh 2vh 10vh;
 }
+.itemList {
+    text-align: center;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    overflow: scroll;
+}
+.itemBox {
+    border: 1px solid black;
+    border-radius: 30px;
+    width: max-content;
+    padding: 3vh;
+    margin: 1vh;
+}
+.itemImage {
+    max-width: 10vh;
+    max-height: 15vh;
+    padding: 1vh;
+}
+.itemDetailsShelf ul {
+    list-style: none;
+}
+.itemName {
+    font-weight: bold;
+}
+.bookAuthor {
+    font-style: italic;
+}
 .labelColumn {
     float: left;
     width: 15vh;
