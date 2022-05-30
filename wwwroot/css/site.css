@@ -150,27 +150,50 @@ a {
     display: grid;
     grid-template-columns: auto auto auto auto;
     overflow: scroll;
+    overflow-x: hidden;
 }
 .itemBox {
     border: 1px solid black;
+    background-color: #9fafc0;
     border-radius: 30px;
-    width: max-content;
+    width: 30vh;
     padding: 3vh;
     margin: 1vh;
 }
 .itemImage {
-    max-width: 10vh;
-    max-height: 15vh;
+    max-width: 20vh;
+    max-height: 20vh;
     padding: 1vh;
 }
 .itemDetailsShelf ul {
     list-style: none;
+    margin-bottom: 1vh;
 }
 .itemName {
     font-weight: bold;
 }
 .bookAuthor {
     font-style: italic;
+}
+.cartButton {
+    background-color: #647C96;
+    color: white;
+    padding: 3px;
+    margin: 1px;
+    border-radius: 3px;
+    border: 2px solid black;
+}
+.itemDetailsShelf a:hover {
+    font-style: italic;
+    border: 2px solid white;
+}
+.detailsButton {
+    background-color: #647C96;
+    color: white;
+    padding: 3px;
+    margin: 1px;
+    border-radius: 3px;
+    border: 2px solid black;
 }
 .labelColumn {
     float: left;
