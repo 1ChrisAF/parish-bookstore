@@ -63,6 +63,7 @@ namespace parish_bookstore.Migrations
                     Bookie = table.Column<int>(type: "int", nullable: false),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PageCount = table.Column<int>(type: "int", nullable: false),
                     Publisher = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PublishYear = table.Column<int>(type: "int", nullable: false),
                     ISBN = table.Column<int>(type: "int", nullable: false),

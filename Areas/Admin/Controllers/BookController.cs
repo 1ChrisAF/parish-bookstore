@@ -66,7 +66,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Quantity,Description,Image")] Book book)
+        public async Task<IActionResult> Create([Bind("BookId,BookCategoryId,Title,Author,PageCount,Publisher,PublishYear,ISBN,Price,Quantity,Description,Image")] Book book)
         {
             string trustedFileName = UploadedFile(book);
             book.ImageName = trustedFileName;
@@ -134,7 +134,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Bookie,Title,Author,Publisher,PublishYear,ISBN,Price,Quantity,Description,Image")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Bookie,Title,Author,PageCount,Publisher,PublishYear,ISBN,Price,Quantity,Description,Image")] Book book)
         {
             ViewData["Context"] = _context;
             if (book.Image == null) 

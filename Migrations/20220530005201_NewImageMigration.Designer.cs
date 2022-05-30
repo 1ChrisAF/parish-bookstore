@@ -11,7 +11,7 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220530004500_NewImageMigration")]
+    [Migration("20220530005201_NewImageMigration")]
     partial class NewImageMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,6 +49,9 @@ namespace parish_bookstore.Migrations
 
                     b.Property<string>("ImageName")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PageCount")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasPrecision(18, 2)
