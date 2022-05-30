@@ -6,67 +6,69 @@
     ViewData["Header"] = "Edit Prayer Rope";
 }
 
-<div>
-    <div>
-        <form enctype="multipart/form-data" asp-action="Edit">
-			<div asp-validation-summary="ModelOnly"></div>
-			<input type="hidden" asp-for="PrayerRopeId"/>
-            <div class="row">
-                <div class="labelColumn">
-					<label asp-for="KnotCount"></label>
-                </div>
-				<div class="column">
-					<input asp-for="KnotCount"/>
-					<span asp-validation-for="KnotCount"></span>
-				</div>
-			</div>
-			<div class="row">
-                <div class="labelColumn">
-					<label asp-for="Material"></label>
-                </div>
-            	<div class="column">
-					<input asp-for="Material"/>
-					<span asp-validation-for="Material"></span>
-                </div>
+<div class="imageContainer">
+	<img src="~/media/images/@Model.ImageName">
+</div>
+<div class = "detailsContainer">
+    <form enctype="multipart/form-data" asp-action="Edit">
+        <div asp-validation-summary="ModelOnly"></div>
+        <input type="hidden" asp-for="PrayerRopeId"/>
+        <input type="hidden" asp-for="Bookie"/>
+        <div class="row">
+            <div class="labelColumn">
+                <label asp-for="KnotCount"></label>
             </div>
-			<div class="row">
-                <div class="labelColumn">
-					<label asp-for="Price"></label>
-                </div>
-            	<div class="column">
-					<input asp-for="Price"/>
-					<span asp-validation-for="Price"></span>
-                </div>
+            <div class="column">
+                <input asp-for="KnotCount"/>
+                <span asp-validation-for="KnotCount"></span>
             </div>
-            <div class="row">
-                <div class="labelColumn">
-					<label asp-for="Quantity"></label>
-                </div>
-            	<div class="column">
-					<input asp-for="Quantity"/>
-					<span asp-validation-for="Quantity"></span>
-                </div>
+        </div>
+        <div class="row">
+            <div class="labelColumn">
+                <label asp-for="Material"></label>
             </div>
-			<div class="row">
-                <div class="labelColumn">
-					<label asp-for="Description"></label>
-                </div>
+            <div class="column">
+                <input asp-for="Material"/>
+                <span asp-validation-for="Material"></span>
             </div>
-            <div class="row">
-					<textarea asp-for="Description" rows="3" cols="40"></textarea>
-					<span asp-validation-for="Description"></span>
+        </div>
+        <div class="row">
+            <div class="labelColumn">
+                <label asp-for="Price"></label>
             </div>
-            <div class="row">
-                <label asp-for="Image"></label>
-                <input type="file" asp-for="Image">
-                <span asp-validation-for="Image"></span>
+            <div class="column">
+                <input asp-for="Price"/>
+                <span asp-validation-for="Price"></span>
             </div>
-			<div class = "row">
-                <a asp-action="Index" class="backToIndex"> &larr; Back to List</a> |
-                <input type="submit" class="submitButton" value="Save Changes"/>
-		    </div>
-        </form>
-    </div>
+        </div>
+        <div class="row">
+            <div class="labelColumn">
+                <label asp-for="Quantity"></label>
+            </div>
+            <div class="column">
+                <input asp-for="Quantity"/>
+                <span asp-validation-for="Quantity"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="labelColumn">
+                <label asp-for="Description"></label>
+            </div>
+        </div>
+        <div class="row">
+                <textarea asp-for="Description" rows="3" cols="40"></textarea>
+                <span asp-validation-for="Description"></span>
+        </div>
+        <div class="row">
+            <label asp-for="Image"></label>
+            <input type="file" asp-for="Image">
+            <span asp-validation-for="Image"></span>
+        </div>
+        <div class = "row">
+            <a asp-action="Index" class="backToIndex"> &larr; Back to List</a> |
+            <input type="submit" class="submitButton" value="Save Changes"/>
+        </div>
+    </form>
 </div>
 
 <div>

@@ -129,7 +129,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Name,Price,Quantity,Description,Image")] HomeAltarItem homeAltarItem)
+        public async Task<IActionResult> Edit(int id, [Bind("HomeAltarItemId,CategoryId,Bookie,Name,Price,Quantity,Description,Image")] HomeAltarItem homeAltarItem)
         {
             ViewData["Context"] = _context;
             if (homeAltarItem.Image == null) 

@@ -124,7 +124,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("PrayerRopeId,KnotCount,Material,Price,Quantity,Description,Image")] PrayerRope prayerRope)
+        public async Task<IActionResult> Edit(int id, [Bind("PrayerRopeId,Bookie,KnotCount,Material,Price,Quantity,Description,Image")] PrayerRope prayerRope)
         {
             if (prayerRope.Image == null) 
             {
