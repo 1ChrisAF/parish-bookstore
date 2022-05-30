@@ -149,8 +149,7 @@ a {
     text-align: center;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    overflow: scroll;
-    overflow-x: hidden;
+    overflow-x: auto;
 }
 .itemBox {
     border: 1px solid black;
@@ -204,8 +203,15 @@ a {
 .column {
     float: left;
     text-align: left;
-    width: 20vh;
     padding-bottom: .5vh;
+}
+#description {
+    overflow-y: auto;
+    max-height: 25vh;
+}
+.row {
+    max-width: 70vh;
+
 }
 /* Clear floats after the columns */
 .row:after {

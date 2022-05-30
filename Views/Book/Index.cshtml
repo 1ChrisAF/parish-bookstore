@@ -6,67 +6,19 @@
     ViewData["Header"] = "Books";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th id="#firstColumnHead">
-                @Html.DisplayNameFor(model => model.BookCategoryId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Author)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Publisher)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PublishYear)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ISBN)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th id="#lastColumnHead"></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class=itemList>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @context.BookCategories.Find(item.BookCategoryId).CategoryName.ToString()
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Author)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publisher)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PublishYear)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ISBN)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Details" asp-route-id="@item.BookId">Details</a>
-            </td>
-        </tr>
+    <div class="itemBox">
+        <img src="~/media/images/@item.ImageName" class="itemImage">
+        <div class="itemDetailsShelf">
+            <ul>
+                <li class="itemName">@Html.DisplayFor(modelItem => item.Title)</li>
+                <li class="bookAuthor">@Html.DisplayFor(modelItem => item.Author)</li>
+                <li class="price">@Html.DisplayFor(modelItem => item.Price)</li>
+            </ul>
+            <a href="#" class="cartButton">Add to Cart</a> |
+            <a href="" class="detailsButton">Details</a>
+        </div>
+    </div>
 }
-    </tbody>
-</table>
+</div>
