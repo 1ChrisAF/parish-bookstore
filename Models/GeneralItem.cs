@@ -9,6 +9,8 @@ public class GeneralItem
     [Required(ErrorMessage = "Please select a category.")]
     [Display(Name = "Category")]
     public int CategoryId {get; set;}
+
+    public int Bookie {get; set;}
     
     [Required(ErrorMessage ="Item name is required!")]
     public string Name {get; set;}
@@ -16,6 +18,12 @@ public class GeneralItem
     [DataType(DataType.Currency)]
     [Column(TypeName = "decimal(18,2)")]
     public decimal Price {get; set;}
+    [Required(ErrorMessage = "Quantity is required!")]
+    public int Quantity {get; set;}
+
+    [Required(ErrorMessage = "Quantity is required!")]
+    public int Quantity {get; set;}
+
     public string? Description {get; set;}
 
     public string ImageName { get; set; }  = "default.png";
