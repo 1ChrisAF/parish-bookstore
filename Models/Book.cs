@@ -17,6 +17,7 @@ public class Book
     [Required(ErrorMessage ="Book author is required!")]
     public string Author {get; set;}
     [Required(ErrorMessage = "Page count is required!")]
+    [Display(Name = "Page Count")]
     public int PageCount {get; set;}
     [Required(ErrorMessage ="Book publisher is required!")]
     public string Publisher {get; set;}
