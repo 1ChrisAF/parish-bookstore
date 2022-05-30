@@ -36,6 +36,9 @@ namespace parish_bookstore.Migrations
                     b.Property<int>("BookCategoryId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Bookie")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 

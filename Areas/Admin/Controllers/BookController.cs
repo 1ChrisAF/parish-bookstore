@@ -16,6 +16,8 @@ namespace parish_bookstore.Areas.Admin.Controllers
         private readonly BookstoreContext _context;
         private readonly IWebHostEnvironment _hostEnvironment;
 
+        private Random rand = new Random();
+
         public BookController(BookstoreContext context, IWebHostEnvironment hostEnvironment)
         {
             _context = context;
@@ -93,12 +95,38 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            TempModel temp = new TempModel();
-            temp.Id = 1;
-            temp.ImageName = book.ImageName;
-            _context.Update(temp);
-            _context.SaveChanges();
+            createBookie(book);
             return View(book);
+        }
+
+        // See note in TempModel. Bookie allows for 
+        // model editing w/o uploading a new image;
+        // allows original image to persist if no
+        // new image was uploaded. 
+        private void createBookie(Book book)
+        {
+            TempModel temp = new TempModel();
+            int bookie = rand.Next(100);
+            while (bookie <= 0) 
+            {
+                bookie = rand.Next(100);
+            }
+            temp.Id = bookie;
+            temp.ImageName = book.ImageName;
+            book.Bookie = bookie;
+            _context.Add(temp);
+            _context.Update(book);
+            _context.Database.OpenConnection();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] ON");
+            _context.SaveChanges();
+            _context.Database.ExecuteSqlRaw(@"SET IDENTITY_INSERT [dbo].[Temp] OFF");
+            _context.Database.CloseConnection();
+        }
+
+        private void deleteBookie(Book book)
+        {
+            _context.Temp.Remove(_context.Temp.Find(book.Bookie));
+            _context.SaveChanges();
         }
         
         // POST: Book/Edit/5
@@ -106,12 +134,13 @@ namespace parish_bookstore.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Title,Author,Publisher,PublishYear,ISBN,Price,Description,Image")] Book book)
+        public async Task<IActionResult> Edit(int id, [Bind("BookId,BookCategoryId,Bookie,Title,Author,Publisher,PublishYear,ISBN,Price,Description,Image")] Book book)
         {
             ViewData["Context"] = _context;
             if (book.Image == null) 
             {
-               book.ImageName = _context.Temp.Find(1).ImageName;
+               book.ImageName = _context.Temp.Find(book.Bookie).ImageName;
+               deleteBookie(book);
             }
             else
             {
