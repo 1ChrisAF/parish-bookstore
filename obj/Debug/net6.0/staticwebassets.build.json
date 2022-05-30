@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uTfoapZFxCxi40K2x7Xee6wtst8+Kg4KoajLsrbjgpQ=",
+  "Hash": "quVJpuhnNiz9uA/8b0SmRrAKSELO1sHQPcpM3RbIi0o=",
   "Source": "parish-bookstore",
   "BasePath": "_content/parish-bookstore",
   "Mode": "Default",
@@ -1426,6 +1426,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\media\\images\\50ad510c-a7b4-4644-ad69-5e34759198ce.png"
+    },
+    {
+      "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\media\\images\\5597a426-8dd8-4397-8941-f6a41982529d.png",
+      "SourceId": "parish-bookstore",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\",
+      "BasePath": "_content/parish-bookstore",
+      "RelativePath": "media/images/5597a426-8dd8-4397-8941-f6a41982529d.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\media\\images\\5597a426-8dd8-4397-8941-f6a41982529d.png"
     },
     {
       "Identity": "C:\\Users\\chris\\Repos\\Web Pages and Applications\\Dynamic Projects\\parish-bookstore\\wwwroot\\media\\images\\f32775da-0a2a-40be-af85-df04fe93334d.png",
