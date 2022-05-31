@@ -1,4 +1,4 @@
-@model parish_bookstore.Models.Book
+@model parish_bookstore.Models.Icon
 
 @{
     ViewData["Title"] = "ERROR";
@@ -7,15 +7,15 @@
 
 
 <h2>The item you are trying to edit cannot be edited.</h2>
-<h3>Item name: @Html.DisplayNameFor(model => model.Title)</h3>
+<h3>Item name: @Html.DisplayNameFor(model => model.Name)</h3>
 <p>An issue with the item setup is preventing the item from being edited.</p>
 <p>This was likely caused by an empty or corrupted field accidentally being saved with the item.</p>
 <p>This should not happen often. If it does, please contact support.</p>
 <p>Any further attempts to edit this item will throw this same error.</p>
 <h2>Please delete and then re-create the item.</h2>
 <p>Would you like to delete the item now?</p>
-<form asp-action="Delete" method="post" asp-route-id="@Model.BookId">
-    <input type="hidden" asp-for="BookId"/>
+<form asp-action="Delete" method="post" asp-route-id="@Model.IconId">
+    <input type="hidden" asp-for="IconId"/>
     <input type="submit" value="Delete" class="delete"/> |
     <a asp-action="Index" class="backToIndex">Back to List</a>
 </form>

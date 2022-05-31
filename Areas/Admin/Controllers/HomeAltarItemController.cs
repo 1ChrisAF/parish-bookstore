@@ -90,7 +90,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            createBookie(homeAltarItem);
+            try
+            {
+                createBookie(homeAltarItem);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = homeAltarItem.HomeAltarItemId });
+            }
             return View(homeAltarItem);
         }
 
@@ -135,7 +142,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (homeAltarItem.Image == null) 
             {
                homeAltarItem.ImageName = _context.Temp.Find(homeAltarItem.Bookie).ImageName;
-               deleteBookie(homeAltarItem);
+               try
+            {
+                deleteBookie(homeAltarItem);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = homeAltarItem.HomeAltarItemId });
+            }
             }
             else
             {
@@ -188,6 +202,23 @@ namespace parish_bookstore.Areas.Admin.Controllers
             }
 
             return View(homeAltarItem);
+        }
+
+        public async Task<IActionResult> EditError(int? id)
+        {
+            ViewData["Context"] = _context;
+            if (id == null || _context.AltarItems == null)
+            {
+                return NotFound();
+            }
+
+            var item = await _context.AltarItems
+                .FirstOrDefaultAsync(m => m.HomeAltarItemId == id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return View(item);
         }
 
         // POST: HomeAltarItem/Delete/5

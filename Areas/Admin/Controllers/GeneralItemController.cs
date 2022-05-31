@@ -91,7 +91,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            createBookie(generalItem);
+            try
+            {
+                createBookie(generalItem);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = generalItem.GeneralItemId });
+            }
             return View(generalItem);
         }
 
@@ -136,7 +143,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (generalItem.Image == null) 
             {
                generalItem.ImageName = _context.Temp.Find(generalItem.Bookie).ImageName;
-               deleteBookie(generalItem);
+               try
+            {
+                deleteBookie(generalItem);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = generalItem.GeneralItemId });
+            }
             }
             else
             {
@@ -188,6 +202,23 @@ namespace parish_bookstore.Areas.Admin.Controllers
             }
 
             return View(generalItem);
+        }
+
+        public async Task<IActionResult> EditError(int? id)
+        {
+            ViewData["Context"] = _context;
+            if (id == null || _context.GeneralItems == null)
+            {
+                return NotFound();
+            }
+
+            var item = await _context.GeneralItems
+                .FirstOrDefaultAsync(m => m.GeneralItemId == id);
+            if (item == null)
+            {
+                return NotFound();
+            }
+            return View(item);
         }
 
         // POST: GeneralItem/Delete/5

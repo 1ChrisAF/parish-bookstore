@@ -85,7 +85,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            createBookie(prayerRope);
+            try
+            {
+                createBookie(prayerRope);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = prayerRope.PrayerRopeId });
+            }
             return View(prayerRope);
         }
 
@@ -129,7 +136,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (prayerRope.Image == null) 
             {
                prayerRope.ImageName = _context.Temp.Find(prayerRope.Bookie).ImageName;
-               deleteBookie(prayerRope);
+               try
+            {
+                deleteBookie(prayerRope);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = prayerRope.PrayerRopeId });
+            }
             }
             else
             {
@@ -181,6 +195,23 @@ namespace parish_bookstore.Areas.Admin.Controllers
             }
 
             return View(prayerRope);
+        }
+
+        public async Task<IActionResult> EditError(int? id)
+        {
+            ViewData["Context"] = _context;
+            if (id == null || _context.PrayerRopes == null)
+            {
+                return NotFound();
+            }
+
+            var rope = await _context.PrayerRopes
+                .FirstOrDefaultAsync(m => m.PrayerRopeId == id);
+            if (rope == null)
+            {
+                return NotFound();
+            }
+            return View(rope);
         }
 
         // POST: PrayerRope/Delete/5

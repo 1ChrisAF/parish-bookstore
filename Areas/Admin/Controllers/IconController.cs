@@ -90,7 +90,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            createBookie(icon);
+            try
+            {
+                createBookie(icon);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = icon.IconId });
+            }
             return View(icon);
         }
 
@@ -135,7 +142,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (icon.Image == null) 
             {
                icon.ImageName = _context.Temp.Find(icon.Bookie).ImageName;
-               deleteBookie(icon);
+               try
+            {
+                deleteBookie(icon);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = icon.IconId });
+            }
             }
             else
             {
@@ -187,6 +201,23 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            return View(icon);
+        }
+
+        public async Task<IActionResult> EditError(int? id)
+        {
+            ViewData["Context"] = _context;
+            if (id == null || _context.Icons == null)
+            {
+                return NotFound();
+            }
+
+            var icon = await _context.Icons
+                .FirstOrDefaultAsync(m => m.IconId == id);
+            if (icon == null)
+            {
+                return NotFound();
+            }
             return View(icon);
         }
 
