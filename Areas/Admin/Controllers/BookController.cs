@@ -207,7 +207,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-
+            ViewData["ID"] = book.BookId;
             return View(book);
         }
 
