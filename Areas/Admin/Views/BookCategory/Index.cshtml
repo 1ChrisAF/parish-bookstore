@@ -20,9 +20,11 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    @if (item.BookCategoryId != 1)
+    {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryName)
+                @Html.DisplayFor(modelItem => item.CategoryName, item.BookCategoryId != 1)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.BookCategoryId">Edit</a> |
@@ -30,6 +32,7 @@
                 <a asp-action="Delete" asp-route-id="@item.BookCategoryId">Delete</a>
             </td>
         </tr>
-}
+    }
+}   
     </tbody>
 </table>
