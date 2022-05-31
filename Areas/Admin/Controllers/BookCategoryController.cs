@@ -133,6 +133,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("DeleteDisallowed", "Home");
+            }
+
             var bookCategory = await _context.BookCategories
                 .FirstOrDefaultAsync(m => m.BookCategoryId == id);
             if (bookCategory == null)

@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Unauthorized";
+    ViewData["Header"] = "Delete Disallowed";
+}
+
+<h2>The category you are trying to delete cannot be deleted.</h2>
+<div id="errorPageText">
+<p>When a category is deleted, all items assigned to that category are automatically re-assigned to the "unassigned" category.</p>
+<br>
+<p>If the items are not re-assigned, they too will all be deleted.</p>
+<br>
+<p>If the "unassigned" category is deleted, those items cannot be re-assigned.</p>
+<br>
+<p>The "unassigned" category acts as a safeguard against accidentally deleting several items at once.</p> 
+<br>
+<p>As such, "unassigned" can never be deleted.</p>
+<br>
+<p>If you have any questions, please contact support.</p>
+</div>
