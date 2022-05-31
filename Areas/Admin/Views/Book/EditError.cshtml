@@ -2,10 +2,9 @@
 
 @{
     ViewData["Title"] = "ERROR";
-    BookstoreContext context = (BookstoreContext)ViewData["Context"];
-    int bookId = (int)ViewData["ID"];
     ViewData["Header"] = "Error Encountered!";
 }
+
 
 <h2>The item you are trying to edit cannot be edited.</h2>
 <p>An issue with the item setup is preventing the item from being edited.</p>
@@ -14,8 +13,9 @@
 <p>Any further attempts to edit this item will throw this same error.</p>
 <h2>Please delete and then re-create the item.</h2>
 <p>Would you like to delete the item now?</p>
-<form asp-action="Delete" method="post">
+<form asp-action="Delete" method="post" asp-route-id="@Model.BookId">
     <input type="hidden" asp-for="BookId" value="@bookId"/>
     <input type="submit" value="Delete" class="delete"/> |
     <a asp-action="Index" class="backToIndex">Back to List</a>
 </form>
+
