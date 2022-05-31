@@ -6,7 +6,8 @@
     ViewData["Header"] = "Books";
 }
 <p>
-    <a asp-action="Create">Add New Book</a>
+    <a asp-action="Create">Add New Book</a> |
+    <a asp-area="Admin" asp-controller="BookCategory" asp-action="Index">Manage Book Categories</a> 
 </p>
 <table class="table">
     <thead>
