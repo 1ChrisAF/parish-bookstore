@@ -14,7 +14,7 @@
 <h2>Please delete and then re-create the item.</h2>
 <p>Would you like to delete the item now?</p>
 <form asp-action="Delete" method="post" asp-route-id="@Model.BookId">
-    <input type="hidden" asp-for="BookId" value="@bookId"/>
+    <input type="hidden" asp-for="BookId"/>
     <input type="submit" value="Delete" class="delete"/> |
     <a asp-action="Index" class="backToIndex">Back to List</a>
 </form>
