@@ -94,26 +94,31 @@ namespace parish_bookstore.Migrations
                         new
                         {
                             BookCategoryId = 1,
-                            CategoryName = "Prayer & Service Books"
+                            CategoryName = "unassigned"
                         },
                         new
                         {
                             BookCategoryId = 2,
-                            CategoryName = "Fathers & Patristics"
+                            CategoryName = "Prayer & Service Books"
                         },
                         new
                         {
                             BookCategoryId = 3,
-                            CategoryName = "Spiritual Development"
+                            CategoryName = "Fathers & Patristics"
                         },
                         new
                         {
                             BookCategoryId = 4,
-                            CategoryName = "Church History"
+                            CategoryName = "Spiritual Development"
                         },
                         new
                         {
                             BookCategoryId = 5,
+                            CategoryName = "Church History"
+                        },
+                        new
+                        {
+                            BookCategoryId = 6,
                             CategoryName = "Liturgics & Services"
                         });
                 });
@@ -175,16 +180,21 @@ namespace parish_bookstore.Migrations
                         new
                         {
                             GeneralItemCategoryId = 1,
-                            CategoryName = "Gifts"
+                            CategoryName = "unassigned"
                         },
                         new
                         {
                             GeneralItemCategoryId = 2,
-                            CategoryName = "Cross Necklaces"
+                            CategoryName = "Gifts"
                         },
                         new
                         {
                             GeneralItemCategoryId = 3,
+                            CategoryName = "Cross Necklaces"
+                        },
+                        new
+                        {
+                            GeneralItemCategoryId = 4,
                             CategoryName = "Seasonal"
                         });
                 });
@@ -246,21 +256,26 @@ namespace parish_bookstore.Migrations
                         new
                         {
                             HomeAltarItemCategoryId = 1,
-                            CategoryName = "Censers"
+                            CategoryName = "unassigned"
                         },
                         new
                         {
                             HomeAltarItemCategoryId = 2,
-                            CategoryName = "Charcoal"
+                            CategoryName = "Censers"
                         },
                         new
                         {
                             HomeAltarItemCategoryId = 3,
-                            CategoryName = "Incense"
+                            CategoryName = "Charcoal"
                         },
                         new
                         {
                             HomeAltarItemCategoryId = 4,
+                            CategoryName = "Incense"
+                        },
+                        new
+                        {
+                            HomeAltarItemCategoryId = 5,
                             CategoryName = "Vigil Lamps & Supplies"
                         });
                 });
@@ -322,26 +337,31 @@ namespace parish_bookstore.Migrations
                         new
                         {
                             IconCategoryId = 1,
-                            CategoryName = "Christ"
+                            CategoryName = "unassigned"
                         },
                         new
                         {
                             IconCategoryId = 2,
-                            CategoryName = "Theotokos"
+                            CategoryName = "Christ"
                         },
                         new
                         {
                             IconCategoryId = 3,
-                            CategoryName = "Angels"
+                            CategoryName = "Theotokos"
                         },
                         new
                         {
                             IconCategoryId = 4,
-                            CategoryName = "Saints"
+                            CategoryName = "Angels"
                         },
                         new
                         {
                             IconCategoryId = 5,
+                            CategoryName = "Saints"
+                        },
+                        new
+                        {
+                            IconCategoryId = 6,
                             CategoryName = "Feasts"
                         });
                 });

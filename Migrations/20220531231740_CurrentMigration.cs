@@ -4,7 +4,7 @@
 
 namespace parish_bookstore.Migrations
 {
-    public partial class NewImageMigration : Migration
+    public partial class CurrentMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -178,10 +178,11 @@ namespace parish_bookstore.Migrations
                 columns: new[] { "HomeAltarItemCategoryId", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Censers" },
-                    { 2, "Charcoal" },
-                    { 3, "Incense" },
-                    { 4, "Vigil Lamps & Supplies" }
+                    { 1, "unassigned" },
+                    { 2, "Censers" },
+                    { 3, "Charcoal" },
+                    { 4, "Incense" },
+                    { 5, "Vigil Lamps & Supplies" }
                 });
 
             migrationBuilder.InsertData(
@@ -189,11 +190,12 @@ namespace parish_bookstore.Migrations
                 columns: new[] { "BookCategoryId", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Prayer & Service Books" },
-                    { 2, "Fathers & Patristics" },
-                    { 3, "Spiritual Development" },
-                    { 4, "Church History" },
-                    { 5, "Liturgics & Services" }
+                    { 1, "unassigned" },
+                    { 2, "Prayer & Service Books" },
+                    { 3, "Fathers & Patristics" },
+                    { 4, "Spiritual Development" },
+                    { 5, "Church History" },
+                    { 6, "Liturgics & Services" }
                 });
 
             migrationBuilder.InsertData(
@@ -201,9 +203,10 @@ namespace parish_bookstore.Migrations
                 columns: new[] { "GeneralItemCategoryId", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Gifts" },
-                    { 2, "Cross Necklaces" },
-                    { 3, "Seasonal" }
+                    { 1, "unassigned" },
+                    { 2, "Gifts" },
+                    { 3, "Cross Necklaces" },
+                    { 4, "Seasonal" }
                 });
 
             migrationBuilder.InsertData(
@@ -211,11 +214,12 @@ namespace parish_bookstore.Migrations
                 columns: new[] { "IconCategoryId", "CategoryName" },
                 values: new object[,]
                 {
-                    { 1, "Christ" },
-                    { 2, "Theotokos" },
-                    { 3, "Angels" },
-                    { 4, "Saints" },
-                    { 5, "Feasts" }
+                    { 1, "unassigned" },
+                    { 2, "Christ" },
+                    { 3, "Theotokos" },
+                    { 4, "Angels" },
+                    { 5, "Saints" },
+                    { 6, "Feasts" }
                 });
 
             migrationBuilder.InsertData(
