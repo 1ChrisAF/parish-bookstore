@@ -177,6 +177,24 @@ namespace parish_bookstore.Areas.Admin.Controllers
             return View(book);
         }
 
+        public async Task<IActionResult> EditError(int? id)
+        {
+            ViewData["Context"] = _context;
+            if (id == null || _context.Books == null)
+            {
+                return NotFound();
+            }
+
+            var book = await _context.Books
+                .FirstOrDefaultAsync(m => m.BookId == id);
+            if (book == null)
+            {
+                return NotFound();
+            }
+
+            return View(book);
+        }
+
         // GET: Book/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
