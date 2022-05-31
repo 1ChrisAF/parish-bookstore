@@ -95,7 +95,15 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            createBookie(book);
+            try
+            {
+                createBookie(book);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = book.BookId });
+            }
+            
             return View(book);
         }
 
@@ -140,7 +148,15 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (book.Image == null) 
             {
                book.ImageName = _context.Temp.Find(book.Bookie).ImageName;
-               deleteBookie(book);
+               try
+            {
+                deleteBookie(book);
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("EditError", new { id = book.BookId });
+            }
+               
             }
             else
             {
