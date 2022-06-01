@@ -18,7 +18,10 @@
                     <option value="">Select a Category</option>
                     @foreach (GeneralItemCategory gc in context.GeneralItemCategories)
                     {
-                        <option value="@gc.GeneralItemCategoryId">@gc.CategoryName</option>
+                        @if (ic.GeneralItemCategoryId != 1)
+                        {
+                            <option value="@bc.GeneralItemCategoryId">@bc.CategoryName</option>
+                        }
                     }
                 </select>
 					<span asp-validation-for="CategoryId"></span>
