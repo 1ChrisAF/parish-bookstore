@@ -18,7 +18,10 @@
                     <option value="">Select a Category</option>
                     @foreach (IconCategory ic in context.IconCategories)
                     {
-                        <option value="@ic.IconCategoryId">@ic.CategoryName</option>
+                        @if (ic.IconCategoryId != 1)
+                        {
+                            <option value="@ic.IconCategoryId">@ic.CategoryName</option>
+                        }
                     }
                 </select>
 					<span asp-validation-for="CategoryId"></span>
