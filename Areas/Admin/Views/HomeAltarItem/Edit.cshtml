@@ -23,7 +23,10 @@
                 <option value="">Select a Category</option>
                     @foreach (HomeAltarItemCategory ic in context.AltarItemCategories)
                     {
-                        <option value="@ic.HomeAltarItemCategoryId">@ic.CategoryName</option>
+                        @if (ic.HomeAltarItemCategoryId != 1)
+                        {
+                            <option value="@bc.HomeAltarItemCategoryId">@bc.CategoryName</option>
+                        }
                     }
                 </select>
                 <span asp-validation-for="CategoryId"></span>
