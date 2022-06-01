@@ -27,8 +27,7 @@
                 @Html.DisplayFor(modelItem => item.CategoryName, item.BookCategoryId != 1)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.BookCategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BookCategoryId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.BookCategoryId">Edit</a> | 
                 <a asp-action="Delete" asp-route-id="@item.BookCategoryId">Delete</a>
             </td>
         </tr>
