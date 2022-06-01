@@ -1,11 +1,9 @@
 @model IEnumerable<parish_bookstore.Models.HomeAltarItem>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Altar Items";
+    ViewData["Header"] = "Home Altar Items";
 }
-
-<h1>Index</h1>
-
 <p>
     <a asp-action="Create">Add New Home Altar Item</a> | 
     <a asp-area="Admin" asp-controller="HomeAltarItemCategory" asp-action="Index">Manage Categories</a> 
