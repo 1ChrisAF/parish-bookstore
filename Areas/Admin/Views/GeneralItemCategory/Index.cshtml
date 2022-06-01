@@ -1,10 +1,9 @@
 @model IEnumerable<parish_bookstore.Models.GeneralItemCategory>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "General Item Categories";
+    ViewData["Header"] = "General Item Categories";
 }
-
-<h1>Index</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -20,16 +19,18 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    @if (item.GeneralItemCategoryId != 1)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CategoryName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.GeneralItemCategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GeneralItemCategoryId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.GeneralItemCategoryId">Edit</a> | 
                 <a asp-action="Delete" asp-route-id="@item.GeneralItemCategoryId">Delete</a>
             </td>
         </tr>
-}
+    }
+}   
     </tbody>
 </table>
