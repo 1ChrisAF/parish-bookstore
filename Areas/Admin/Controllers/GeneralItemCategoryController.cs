@@ -37,6 +37,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
+            }
+
             var generalItemCategory = await _context.GeneralItemCategories
                 .FirstOrDefaultAsync(m => m.GeneralItemCategoryId == id);
             if (generalItemCategory == null)
@@ -78,6 +83,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (id == null || _context.GeneralItemCategories == null)
             {
                 return NotFound();
+            }
+
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
             }
 
             var generalItemCategory = await _context.GeneralItemCategories.FindAsync(id);
@@ -133,6 +143,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("DeleteDisallowed", "Home");
+            }
+
             var generalItemCategory = await _context.GeneralItemCategories
                 .FirstOrDefaultAsync(m => m.GeneralItemCategoryId == id);
             if (generalItemCategory == null)
@@ -156,6 +171,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             var generalItemCategory = await _context.GeneralItemCategories.FindAsync(id);
             if (generalItemCategory != null)
             {
+                foreach (GeneralItem item in _context.GeneralItems) 
+                {
+                    if (item.CategoryId == id)
+                    {
+                        item.CategoryId = 1;
+                        _context.Update(item);
+                    }
+                }
                 _context.GeneralItemCategories.Remove(generalItemCategory);
             }
             
