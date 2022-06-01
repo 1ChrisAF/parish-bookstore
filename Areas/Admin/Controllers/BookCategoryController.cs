@@ -161,6 +161,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             var bookCategory = await _context.BookCategories.FindAsync(id);
             if (bookCategory != null)
             {
+                foreach (Book book in _context.Books) 
+                {
+                    if (book.BookCategoryId == id)
+                    {
+                        book.BookCategoryId = 1;
+                        _context.Update(book);
+                    }
+                }
                 _context.BookCategories.Remove(bookCategory);
             }
             
