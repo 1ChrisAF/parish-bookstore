@@ -132,6 +132,10 @@ namespace parish_bookstore.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            if (id == 1)
+            {
+                return RedirectToAction("DeleteDisallowed", "Home");
+            }
 
             var iconCategory = await _context.IconCategories
                 .FirstOrDefaultAsync(m => m.IconCategoryId == id);
@@ -156,6 +160,14 @@ namespace parish_bookstore.Areas.Admin.Controllers
             var iconCategory = await _context.IconCategories.FindAsync(id);
             if (iconCategory != null)
             {
+                foreach (Icon icon in _context.Icons) 
+                {
+                    if (icon.CategoryId == id)
+                    {
+                        icon.CategoryId = 1;
+                        _context.Update(icon);
+                    }
+                }
                 _context.IconCategories.Remove(iconCategory);
             }
             

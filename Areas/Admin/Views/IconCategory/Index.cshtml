@@ -20,16 +20,18 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
+    @if (item.IconCategoryId != 1)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.CategoryName)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IconCategoryId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IconCategoryId">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.IconCategoryId">Edit</a> | 
                 <a asp-action="Delete" asp-route-id="@item.IconCategoryId">Delete</a>
             </td>
         </tr>
+    }
 }
     </tbody>
 </table>
