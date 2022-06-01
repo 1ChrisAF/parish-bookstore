@@ -2,38 +2,41 @@
 
 @{
     ViewData["Title"] = "Icon Details";
-    BookstoreContext context = (BookstoreContext)ViewData["Context"];
     ViewData["Header"] = "Icon Details";
 }
 
-<div>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.CategoryId)
-        </dt>
-        <dd class = "col-sm-10">
-            @context.IconCategories.Find(Model.CategoryId).CategoryName.ToString()
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
+<div class="imageContainer">
+    <img src="~/media/images/@Model.ImageName">
 </div>
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="detailsContainer">
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Name)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Name)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="column" id="description">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+    </div>
+    <div class="row, stageButtons">
+        <a asp-action="Index" class="backToIndex"> &larr; Back to List</a> | 
+        <a href="#" class="cartButton">Add to Cart</a>
+    </div>
 </div>
+<br>
+
