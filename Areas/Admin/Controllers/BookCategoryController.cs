@@ -37,6 +37,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
+            }
+
             var bookCategory = await _context.BookCategories
                 .FirstOrDefaultAsync(m => m.BookCategoryId == id);
             if (bookCategory == null)
@@ -78,6 +83,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (id == null || _context.BookCategories == null)
             {
                 return NotFound();
+            }
+
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
             }
 
             var bookCategory = await _context.BookCategories.FindAsync(id);
