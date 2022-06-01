@@ -37,6 +37,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
+            }
+
             var iconCategory = await _context.IconCategories
                 .FirstOrDefaultAsync(m => m.IconCategoryId == id);
             if (iconCategory == null)
@@ -78,6 +83,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (id == null || _context.IconCategories == null)
             {
                 return NotFound();
+            }
+
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
             }
 
             var iconCategory = await _context.IconCategories.FindAsync(id);
