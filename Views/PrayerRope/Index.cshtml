@@ -5,45 +5,19 @@
     ViewData["Header"] = "Prayer Ropes";
 }
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.KnotCount)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Material)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+<div class=itemList>
 @foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.KnotCount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Material)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.PrayerRopeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.PrayerRopeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.PrayerRopeId">Delete</a>
-            </td>
-        </tr>
+    <div class="itemBox">
+        <img src="~/media/images/@item.ImageName" class="itemImage">
+        <div class="itemDetailsShelf">
+            <ul>
+                <li class="itemName">@Html.DisplayFor(modelItem => item.KnotCount)-Knots</li>
+                <li class="bookAuthor">@Html.DisplayFor(modelItem => item.Material)</li>
+                <li class="price">@Html.DisplayFor(modelItem => item.Price)</li>
+            </ul>
+            <a href="#" class="cartButton">Add to Cart</a> |
+            <a asp-action="Details" asp-route-id="@item.PrayerRopeId" class="detailsButton">Details</a>
+        </div>
+    </div>
 }
-    </tbody>
-</table>
+</div>

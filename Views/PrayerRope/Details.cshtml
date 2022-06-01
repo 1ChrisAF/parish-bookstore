@@ -2,37 +2,49 @@
 
 @{
     ViewData["Title"] = "Rope Details";
-    ViewData["Header"] = "Rope Details";
+    ViewData["Header"] = "Prayer Rope Details";
 }
 
-<div>
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.KnotCount)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.KnotCount)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Material)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Material)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-    </dl>
+<div class="imageContainer">
+    <img src="~/media/images/@Model.ImageName">
 </div>
-<div>|
-    <a asp-action="Index">Back to List</a>
+<div class="detailsContainer">
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.KnotCount)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.KnotCount)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Material)
+            </div>
+            <div class="column" >
+                @Html.DisplayFor(model => model.Material)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Price)
+            </div>
+            <div class="column">
+                @Html.DisplayFor(model => model.Price)
+            </div>
+    </div>
+    <div class="row">
+            <div class="labelColumn">
+                @Html.DisplayNameFor(model => model.Description)
+            </div>
+            <div class="column" id="description">
+                @Html.DisplayFor(model => model.Description)
+            </div>
+    </div>
+    <div class="row, stageButtons">
+        <a asp-action="Index" class="backToIndex"> &larr; Back to List</a> | 
+        <a href="#" class="cartButton">Add to Cart</a>
+    </div>
 </div>
+<br>
+
