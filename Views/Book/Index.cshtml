@@ -17,7 +17,7 @@
                 <li class="price">@Html.DisplayFor(modelItem => item.Price)</li>
             </ul>
             <a href="#" class="cartButton">Add to Cart</a> |
-            <a href="" class="detailsButton">Details</a>
+            <a asp-action="Details" asp-route-id="@item.BookId" class="detailsButton">Details</a>
         </div>
     </div>
 }
