@@ -8,6 +8,7 @@ public class PrayerRope
     public int PrayerRopeId {get; set;}
     public int Bookie {get; set;}
     [Required(ErrorMessage ="Knot count is required!")]
+    [Display(Name = "Knot Count")]
     public int KnotCount {get; set;}
     [Required(ErrorMessage ="Rope material is required!")]
     public string Material {get; set;}
