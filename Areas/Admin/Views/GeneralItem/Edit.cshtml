@@ -21,11 +21,11 @@
             <div class="column">
                 <select asp-for="CategoryId">
                     <option value="">Select a Category</option>
-                    @foreach (GeneralItemCategory ic in context.GeneralItemCategories)
+                    @foreach (GeneralItemCategory gc in context.GeneralItemCategories)
                     {
-                        @if (ic.GeneralItemCategoryId != 1)
+                        @if (gc.GeneralItemCategoryId != 1)
                         {
-                            <option value="@bc.GeneralItemCategoryId">@bc.CategoryName</option>
+                            <option value="@gc.GeneralItemCategoryId">@gc.CategoryName</option>
                         }
                     }
                 </select>
