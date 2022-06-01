@@ -40,11 +40,6 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            if (id == 1)
-            {
-                return RedirectToAction("Index");
-            }
-
             var homeAltarItem = await _context.AltarItems
                 .FirstOrDefaultAsync(m => m.HomeAltarItemId == id);
             if (homeAltarItem == null)
@@ -88,11 +83,6 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (id == null || _context.AltarItems == null)
             {
                 return NotFound();
-            }
-
-            if (id == 1)
-            {
-                return RedirectToAction("Index");
             }
 
             var homeAltarItem = await _context.AltarItems.FindAsync(id);
@@ -204,11 +194,6 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
-            if (id == 1)
-            {
-                return RedirectToAction("DeleteDisallowed", "Home");
-            }
-
             var homeAltarItem = await _context.AltarItems
                 .FirstOrDefaultAsync(m => m.HomeAltarItemId == id);
             if (homeAltarItem == null)
@@ -249,14 +234,7 @@ namespace parish_bookstore.Areas.Admin.Controllers
             var homeAltarItem = await _context.AltarItems.FindAsync(id);
             if (homeAltarItem != null)
             {
-                foreach (HomeAltarItem item in _context.AltarItems) 
-                {
-                    if (item.CategoryId == id)
-                    {
-                        item.CategoryId = 1;
-                        _context.Update(item);
-                    }
-                }
+                
                 _context.AltarItems.Remove(homeAltarItem);
             }
             

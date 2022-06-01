@@ -37,6 +37,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
+            }
+
             var homeAltarItemCategory = await _context.AltarItemCategories
                 .FirstOrDefaultAsync(m => m.HomeAltarItemCategoryId == id);
             if (homeAltarItemCategory == null)
@@ -78,6 +83,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
             if (id == null || _context.AltarItemCategories == null)
             {
                 return NotFound();
+            }
+
+            if (id == 1)
+            {
+                return RedirectToAction("Index");
             }
 
             var homeAltarItemCategory = await _context.AltarItemCategories.FindAsync(id);
@@ -133,6 +143,11 @@ namespace parish_bookstore.Areas.Admin.Controllers
                 return NotFound();
             }
 
+            if (id == 1)
+            {
+                return RedirectToAction("DeleteDisallowed", "Home");
+            }
+
             var homeAltarItemCategory = await _context.AltarItemCategories
                 .FirstOrDefaultAsync(m => m.HomeAltarItemCategoryId == id);
             if (homeAltarItemCategory == null)
@@ -156,6 +171,15 @@ namespace parish_bookstore.Areas.Admin.Controllers
             var homeAltarItemCategory = await _context.AltarItemCategories.FindAsync(id);
             if (homeAltarItemCategory != null)
             {
+                foreach (HomeAltarItem item in _context.AltarItems) 
+                {
+                    if (item.CategoryId == id)
+                    {
+                        item.CategoryId = 1;
+                        _context.Update(item);
+                    }
+                }
+
                 _context.AltarItemCategories.Remove(homeAltarItemCategory);
             }
             
