@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
-public interface IItemType : IItemType
+public interface IItemType 
 {
 
 }
