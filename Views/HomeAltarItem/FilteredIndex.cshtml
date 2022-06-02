@@ -1,0 +1,42 @@
+@model IEnumerable<parish_bookstore.Models.HomeAltarItem>
+
+@{
+    ViewData["Title"] = "Icons";
+    ViewData["Header"] = "Icons";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    int id = (int)ViewData["CurrentCategory"];
+}
+
+<div class="filterList">
+    <p id="filterHeader">Filter by Category:</p>
+    <ul>
+        @foreach (HomeAltarItemCategory category in context.AltarItemCategories.Where(a => a.HomeAltarItemCategoryId != 1).ToList())
+        {
+            @if (category.HomeAltarItemCategoryId != id)
+            {
+                <li><a asp-action="FilteredIndex" asp-route-id="@category.HomeAltarItemCategoryId">@category.CategoryName</a></li>
+            }
+            else
+            {
+                <li id="currentFilterList">@category.CategoryName</li>
+            }
+            
+        }
+        <li><a asp-action="Index">All Icons</a></li>
+    </ul>
+</div>
+<div class=itemList>
+@foreach (var item in Model) {
+    <div class="itemBox">
+        <img src="~/media/images/@item.ImageName" class="itemImage">
+        <div class="itemDetailsShelf">
+            <ul>
+                <li class="itemName">@Html.DisplayFor(modelItem => item.Name)</li>
+                <li class="price">@Html.DisplayFor(modelItem => item.Price)</li>
+            </ul>
+            <a href="#" class="cartButton">Add to Cart</a> |
+            <a asp-action="Details" asp-route-id="@item.HomeAltarItemId" class="detailsButton">Details</a>
+        </div>
+    </div>
+}
+</div>
