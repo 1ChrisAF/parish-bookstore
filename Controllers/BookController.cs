@@ -62,5 +62,24 @@ namespace parish_bookstore.Controllers
 
             return View(book);
         }
+
+        public void AddItemToCart(int userId, int itemId, int quantity)
+        {	
+            // Find item in context
+            var item = _context.Books.Find(itemId);
+            // Find user in context
+            var user = _context.Users.Find(userId);
+            // If user does NOT already have the item in cart, add it
+            if (user.Cart.TryAdd(item,quantity))
+            {
+                _context.Users.Update(user);
+            }
+            else
+            {
+                // ELSE, add 1 to quantity
+                user.Cart[item] = quantity+1;
+            }
+                
+        }
     }
 }

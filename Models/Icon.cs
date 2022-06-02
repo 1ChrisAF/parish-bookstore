@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
-public class Icon 
+public class Icon : IItemType 
 {
     public int IconId {get; set;}
     [Required(ErrorMessage = "Please select a category.")]

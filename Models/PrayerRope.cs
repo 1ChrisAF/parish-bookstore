@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
-public class PrayerRope 
+public class PrayerRope : IItemType 
 {
     public int PrayerRopeId {get; set;}
     public int Bookie {get; set;}

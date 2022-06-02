@@ -20,6 +20,8 @@ public class BookstoreContext : DbContext
     public DbSet<GeneralItem> GeneralItems {get; set;}
     public DbSet<GeneralItemCategory> GeneralItemCategories {get; set;}
 
+    public DbSet<TestUser> Users {get; set;}
+
     public DbSet<TempModel> Temp {get; set;}
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
