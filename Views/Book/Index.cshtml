@@ -8,12 +8,9 @@
 
 <div>
     <ul>
-        @foreach (BookCategory category in context.BookCategories)
+        @foreach (BookCategory category in context.BookCategories.Where(b => b.BookCategoryId != 1).ToList())
         {
-            @if (category.BookCategoryId != 1)
-            {
-                <li><a asp-action="FilteredIndex" asp-route-id="@category.BookCategoryId">@category.CategoryName</a></li>
-            }
+            <li><a asp-action="FilteredIndex" asp-route-id="@category.BookCategoryId">@category.CategoryName</a></li>
         }
     </ul>
 </div>
