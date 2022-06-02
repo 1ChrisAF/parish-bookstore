@@ -26,7 +26,7 @@ namespace parish_bookstore.Controllers
         {
             ViewData["Context"] = _context;
               return _context.Books != null ? 
-                          View(await _context.Books.ToListAsync()) :
+                          View(await _context.Books.Where(b => b.BookCategoryId != 1).ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Books'  is null.");
         }
 

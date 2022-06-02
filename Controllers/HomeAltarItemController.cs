@@ -26,8 +26,21 @@ namespace parish_bookstore.Controllers
         {
             ViewData["Context"] = viewContext;
               return _context.AltarItems != null ? 
-                          View(await _context.AltarItems.ToListAsync()) :
+                          View(await _context.AltarItems.Where(a => a.CategoryId != 1).ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.AltarItems'  is null.");
+        }
+
+        public async Task<IActionResult> FilteredIndex(int? id)
+        {
+            ViewData["Context"] = _context;
+            ViewData["CurrentCategory"] = id;
+            if (_context.Books == null)
+            {
+                return Problem("Entity set 'BookstoreContext.Books'  is null.");
+            }
+            var filteredItems = await _context.AltarItems.Where(a => a.CategoryId == id).ToListAsync();
+            return  View(filteredItems);
+                          
         }
 
         // GET: HomeAltarItem/Details/5
