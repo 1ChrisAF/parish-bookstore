@@ -14,7 +14,7 @@
         {
             @if (category.GeneralItemCategoryId != id)
             {
-                <li><a asp-action="FilteredIndex" asp-route-id="@category.HomeAltarItemCategoryId">@category.CategoryName</a></li>
+                <li><a asp-action="FilteredIndex" asp-route-id="@category.GeneralItemCategoryId">@category.CategoryName</a></li>
             }
             else
             {
