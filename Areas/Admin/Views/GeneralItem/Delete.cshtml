@@ -54,9 +54,9 @@
     </div>
     <div class="row, stageButtons">
         <form asp-action="Delete">
+			<a asp-action="Index" class="backToIndex"> &larr; Back to List</a> | 
 			<input type="hidden" asp-for="GeneralItemId" />
-			<input type="submit" value="Delete" class="delete"/> |
-			<a asp-action="Index" class="backToIndex">Back to List</a>
+			<input type="submit" value="Delete" class="delete"/>
     </form>
     </div>
 </div>
