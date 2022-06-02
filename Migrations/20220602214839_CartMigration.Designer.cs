@@ -11,7 +11,7 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220602205728_CartMigration")]
+    [Migration("20220602214839_CartMigration")]
     partial class CartMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
