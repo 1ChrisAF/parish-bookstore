@@ -13,12 +13,10 @@ namespace parish_bookstore.Controllers
     {
         private readonly BookstoreContext _context;
 
-        BookstoreContext viewContext;
 
         public BookController(BookstoreContext context)
         {
             _context = context;
-            viewContext = context;
         }
 
         
@@ -26,16 +24,28 @@ namespace parish_bookstore.Controllers
         // GET: Book
         public async Task<IActionResult> Index()
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
               return _context.Books != null ? 
                           View(await _context.Books.ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Books'  is null.");
         }
 
+        public async Task<IActionResult> FilteredIndex(int? id)
+        {
+            ViewData["Context"] = _context;
+            if (_context.Books == null)
+            {
+                return Problem("Entity set 'BookstoreContext.Books'  is null.");
+            }
+            var filteredBooks = await _context.Books.Where(b => b.BookCategoryId == id).ToListAsync();
+            return  View(filteredBooks);
+                          
+        }
+
         // GET: Book/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            ViewData["Context"] = viewContext;
+            ViewData["Context"] = _context;
             if (id == null || _context.Books == null)
             {
                 return NotFound();
