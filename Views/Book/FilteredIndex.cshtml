@@ -4,20 +4,27 @@
     ViewData["Title"] = "Books";
     ViewData["Header"] = "Books";
     BookstoreContext context = (BookstoreContext)ViewData["Context"];
+    int id = (int)ViewData["CurrentCategory"];
 }
 
-<div>
+<div class="filterList">
+    <p id="filterHeader">Filter by Category:</p>
     <ul>
-        @foreach (BookCategory category in context.BookCategories)
+        @foreach (BookCategory category in context.BookCategories.Where(b => b.BookCategoryId != 1).ToList())
         {
-            @if (category.BookCategoryId != 1)
+            @if (category.BookCategoryId != id)
             {
                 <li><a asp-action="FilteredIndex" asp-route-id="@category.BookCategoryId">@category.CategoryName</a></li>
             }
+            else
+            {
+                <li id="currentFilterList">@category.CategoryName</li>
+            }
+            
         }
+        <li><a asp-action="Index">All Books</a></li>
     </ul>
 </div>
-
 <div class=itemList>
 @foreach (var item in Model) {
     <div class="itemBox">

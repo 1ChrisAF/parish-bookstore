@@ -33,6 +33,7 @@ namespace parish_bookstore.Controllers
         public async Task<IActionResult> FilteredIndex(int? id)
         {
             ViewData["Context"] = _context;
+            ViewData["CurrentCategory"] = id;
             if (_context.Books == null)
             {
                 return Problem("Entity set 'BookstoreContext.Books'  is null.");
