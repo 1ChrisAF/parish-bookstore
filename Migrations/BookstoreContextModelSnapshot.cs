@@ -426,6 +426,25 @@ namespace parish_bookstore.Migrations
                             ImageName = ""
                         });
                 });
+
+            modelBuilder.Entity("parish_bookstore.Models.TestUser", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1
+                        });
+                });
 #pragma warning restore 612, 618
         }
     }

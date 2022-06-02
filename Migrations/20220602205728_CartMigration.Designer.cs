@@ -11,8 +11,8 @@ using parish_bookstore.Models;
 namespace parish_bookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220531231740_CurrentMigration")]
-    partial class CurrentMigration
+    [Migration("20220602205728_CartMigration")]
+    partial class CartMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -426,6 +426,25 @@ namespace parish_bookstore.Migrations
                         {
                             Id = 1,
                             ImageName = ""
+                        });
+                });
+
+            modelBuilder.Entity("parish_bookstore.Models.TestUser", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserId"), 1L, 1);
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Users");
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = 1
                         });
                 });
 #pragma warning restore 612, 618

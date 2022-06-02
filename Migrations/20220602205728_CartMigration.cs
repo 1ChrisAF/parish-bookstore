@@ -4,7 +4,7 @@
 
 namespace parish_bookstore.Migrations
 {
-    public partial class CurrentMigration : Migration
+    public partial class CartMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -173,6 +173,18 @@ namespace parish_bookstore.Migrations
                     table.PrimaryKey("PK_Temp", x => x.Id);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.UserId);
+                });
+
             migrationBuilder.InsertData(
                 table: "AltarItemCategories",
                 columns: new[] { "HomeAltarItemCategoryId", "CategoryName" },
@@ -226,6 +238,11 @@ namespace parish_bookstore.Migrations
                 table: "Temp",
                 columns: new[] { "Id", "ImageName" },
                 values: new object[] { 1, "" });
+
+            migrationBuilder.InsertData(
+                table: "Users",
+                column: "UserId",
+                value: 1);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -259,6 +276,9 @@ namespace parish_bookstore.Migrations
 
             migrationBuilder.DropTable(
                 name: "Temp");
+
+            migrationBuilder.DropTable(
+                name: "Users");
         }
     }
 }
