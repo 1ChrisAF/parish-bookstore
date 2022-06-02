@@ -6,7 +6,9 @@
     BookstoreContext context = (BookstoreContext)ViewData["Context"];
 }
 
-<div>
+
+<div class="filterList">
+    <p id="filterHeader">Filter by Category:</p>
     <ul>
         @foreach (BookCategory category in context.BookCategories.Where(b => b.BookCategoryId != 1).ToList())
         {
@@ -14,7 +16,6 @@
         }
     </ul>
 </div>
-
 <div class=itemList>
 @foreach (var item in Model) {
     <div class="itemBox">
