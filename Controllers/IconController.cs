@@ -25,6 +25,7 @@ namespace parish_bookstore.Controllers
         public async Task<IActionResult> Index()
         {
             ViewData["Context"] = viewContext;
+            // Return all items EXCEPT those w/ the category "unassigned"
               return _context.Icons != null ? 
                           View(await _context.Icons.Where(i => i.CategoryId != 1).ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.Icons'  is null.");

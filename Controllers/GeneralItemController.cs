@@ -25,6 +25,7 @@ namespace parish_bookstore.Controllers
         public async Task<IActionResult> Index()
         {
             ViewData["Context"] = viewContext;
+            // Return all items EXCEPT those w/ the category "unassigned"
               return _context.GeneralItems != null ? 
                           View(await _context.GeneralItems.Where(g => g.CategoryId != 1).ToListAsync()) :
                           Problem("Entity set 'BookstoreContext.GeneralItems'  is null.");
