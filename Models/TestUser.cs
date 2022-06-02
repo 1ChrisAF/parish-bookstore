@@ -6,5 +6,5 @@ namespace parish_bookstore.Models;
 public class TestUser 
 {
     public int UserId {get; set;}
-    public Dictionary<IItemType, int> Cart = new Dictionary<IItemType, int>();
+    public Dictionary<IItemType, int>? Cart = new Dictionary<IItemType, int>();
 }
