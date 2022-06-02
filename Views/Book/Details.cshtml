@@ -82,8 +82,17 @@
             </div>
     </div>
     <div class="row, stageButtons">
+        @{
+            var args = new Dictionary<string, string>
+                {
+                    {"userId", "1"},
+                    {"itemId", @Model.BookId.ToString()},
+                    {"quantity", "1"}
+
+                };
+        }
         <a asp-action="Index" class="backToIndex"> &larr; Back to List</a> | 
-        <a href="#" class="cartButton">Add to Cart</a>
+        <a asp-route="addtocart" asp-all-route-data="args" class="cartButton">Add to Cart</a>
     </div>
 </div>
 <br>

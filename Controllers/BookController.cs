@@ -62,8 +62,8 @@ namespace parish_bookstore.Controllers
 
             return View(book);
         }
-
-        public void AddItemToCart(int userId, int itemId, int quantity)
+        [Route("/Book/AddToCart", Name="addtocart")]
+        public RedirectToActionResult AddItemToCart(int userId, int itemId, int quantity)
         {	
             // Find item in context
             var item = _context.Books.Find(itemId);
@@ -73,13 +73,16 @@ namespace parish_bookstore.Controllers
             if (user.Cart.TryAdd(item,quantity))
             {
                 _context.Users.Update(user);
+                _context.SaveChanges();
             }
             else
             {
                 // ELSE, add 1 to quantity
                 user.Cart[item] = quantity+1;
+                _context.Users.Update(user);
+                _context.SaveChanges();
             }
-                
+            return RedirectToAction("Details", new {id = itemId});
         }
     }
 }
