@@ -3,8 +3,18 @@
 @{
     ViewData["Title"] = "Icons";
     ViewData["Header"] = "Icons";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
 }
 
+<div class="filterList">
+    <p id="filterHeader">Filter by Category:</p>
+    <ul>
+        @foreach (IconCategory category in context.IconCategories.Where(i => i.IconCategoryId != 1).ToList())
+        {
+            <li><a asp-action="FilteredIndex" asp-route-id="@category.IconCategoryId">@category.CategoryName</a></li>
+        }
+    </ul>
+</div>
 <div class=itemList>
 @foreach (var item in Model) {
     <div class="itemBox">

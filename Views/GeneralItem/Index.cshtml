@@ -1,10 +1,20 @@
 @model IEnumerable<parish_bookstore.Models.GeneralItem>
 
 @{
-    ViewData["Title"] = "Gifts & Other";
-    ViewData["Header"] = "Gifts & Other Items";
+    ViewData["Title"] = "Icons";
+    ViewData["Header"] = "Icons";
+    BookstoreContext context = (BookstoreContext)ViewData["Context"];
 }
 
+<div class="filterList">
+    <p id="filterHeader">Filter by Category:</p>
+    <ul>
+        @foreach (GeneralItemCategory category in context.GeneralItemCategories.Where(g => g.GeneralItemCategoryId != 1).ToList())
+        {
+            <li><a asp-action="FilteredIndex" asp-route-id="@category.GeneralItemCategoryId">@category.CategoryName</a></li>
+        }
+    </ul>
+</div>
 <div class=itemList>
 @foreach (var item in Model) {
     <div class="itemBox">
