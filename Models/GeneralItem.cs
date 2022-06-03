@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
-public class GeneralItem : IItemType 
+public class GeneralItem : ItemType 
 {
     public int GeneralItemId {get; set;}
     [Required(ErrorMessage = "Please select a category.")]
