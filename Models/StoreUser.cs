@@ -6,5 +6,6 @@ namespace parish_bookstore.Models;
 
 public class StoreUser : IdentityUser
 {
+    [Key]
     public int UserId {get; set;}
 }

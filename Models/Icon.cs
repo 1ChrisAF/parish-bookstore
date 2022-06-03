@@ -5,6 +5,7 @@ namespace parish_bookstore.Models;
 
 public class Icon
 {
+    [Key]
     public int ItemId {get; set;}
 
     public int StoreItemId {get; set;}

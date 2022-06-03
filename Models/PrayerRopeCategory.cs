@@ -5,6 +5,7 @@ namespace parish_bookstore.Models;
 
 public class PrayerRopeCategory
 {
+    [Key]
     public int CategoryId {get; set;}
     public string? CategoryName {get; set;}
 }

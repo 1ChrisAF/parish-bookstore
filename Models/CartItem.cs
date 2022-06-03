@@ -5,6 +5,7 @@ namespace parish_bookstore.Models;
 
 public class CartItem
 {
+    [Key]
     public int CartItemId {get; set;}
     public int UserId {get; set;}           // Identifies the user to whom the Cart belongs
     public int StoreItemId {get; set;}      // Identifies the object type

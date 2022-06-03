@@ -5,6 +5,7 @@ namespace parish_bookstore.Models;
 
 public class Bookie
 {
+    [Key]
     public int BookieId {get; set;}
     public string? ImageName {get; set;}
 }
