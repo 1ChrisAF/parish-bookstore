@@ -5,7 +5,7 @@ namespace parish_bookstore.Models;
 
 public class CartItem
 {
-    [Key]
+    
     public ItemType Item {get; set;}
     public int? Quantity {get; set;}
 

@@ -44,7 +44,7 @@ public class BookstoreContext : DbContext
         modelBuilder.Entity<TempModel>().HasData(
             new TempModel {Id = 1, ImageName = ""}
         );
-        
+        modelBuilder.Entity<CartItem>().HasNoKey();
         modelBuilder.Entity<BookCategory>().HasData(
             new BookCategory {BookCategoryId = 1, CategoryName = "unassigned"},
             new BookCategory {BookCategoryId = 2, CategoryName = "Prayer & Service Books"},
