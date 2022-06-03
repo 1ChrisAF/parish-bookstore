@@ -8,6 +8,6 @@ public class TestUser
     [Key]
     public int UserId {get; set;}
 
-    public List<CartItem> Cart {get; set;}
+    public int CartId {get; set;}
 }
 

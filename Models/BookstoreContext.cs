@@ -21,6 +21,8 @@ public class BookstoreContext : DbContext
     public DbSet<GeneralItemCategory> GeneralItemCategories {get; set;}
 
     public DbSet<TestUser> Users {get; set;}
+    public DbSet<Cart> Carts {get; set;}
+    public DbSet<CartItem> CartItems {get; set;}
 
     public DbSet<TempModel> Temp {get; set;}
 
@@ -44,7 +46,6 @@ public class BookstoreContext : DbContext
         modelBuilder.Entity<TempModel>().HasData(
             new TempModel {Id = 1, ImageName = ""}
         );
-        modelBuilder.Entity<CartItem>().HasNoKey();
         modelBuilder.Entity<BookCategory>().HasData(
             new BookCategory {BookCategoryId = 1, CategoryName = "unassigned"},
             new BookCategory {BookCategoryId = 2, CategoryName = "Prayer & Service Books"},

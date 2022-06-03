@@ -3,8 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
-[NotMapped]
-public class ItemType 
+public class Cart
 {
-
+    [Key]
+    public int CartId {get; set;}
+    
 }
+

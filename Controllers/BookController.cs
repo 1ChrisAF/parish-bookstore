@@ -69,29 +69,50 @@ namespace parish_bookstore.Controllers
             var item = _context.Books.Find(itemId);
             // Find user in context
             var user = _context.Users.Find(userId);
-            // If user does NOT already have the item in cart, add it
-            var cartItem = (CartItem)user.Cart.Where(b => b.Item == item);
-            if (cartItem == null)
+            // Find user cart in context
+            var cart = _context.Carts.Find(user.CartId);
+            // If user DOES already have the item in cart...
+            if (productExistsInCart(item, userId))
             {
-                CartItem newItem = new CartItem();
-                newItem.Item = item;
-                newItem.Quantity = quantity;
-                user.Cart.Add(newItem);
-                _context.Users.Update(user);
-                _context.SaveChanges();
+                var cartItem = (CartItem)_context.CartItems.Where(c => c.CartId == user.CartId && c.Item == item);
+                cartItem.Quantity += 1;
+                _context.Update(cartItem);
             }
             else
             {
-                // ELSE, add 1 to quantity
-                CartItem newItem = new CartItem();
-                newItem.Item = cartItem.Item;
-                newItem.Quantity = cartItem.Quantity + 1;
-                user.Cart.Remove(cartItem);
-                user.Cart.Add(newItem);
-                _context.Users.Update(user);
-                _context.SaveChanges();
+                // ELSE, create item/quantity.
+                // Item and Quantity MUST have the same index.
+                CartItem cartItem = new CartItem();
+                cartItem.CartId = user.CartId;
+                cartItem.Item = item;
+                cartItem.Quantity = quantity;
+                _context.CartItems.Add(cartItem);
             }
+            _context.Update(user);
+            
+            _context.SaveChanges();
             return RedirectToAction("Details", new {id = itemId});
+        }
+
+        private bool productExistsInCart(Book book, int userId)
+        {
+            bool isInCart = false;
+            var user = _context.Users.Find(userId);
+            // Retrieve user CartId
+            int userCart = user.CartId;
+            // Pull all cart items associated w/ user cart id
+            var cartItems = _context.CartItems.Where(ci => ci.CartId == userCart).ToList();
+            // Try to find book type in items associated w/ user cart id,
+            // shoudl return NULL if not found
+            var cartItemType = cartItems.Find(ci => ci.Item == book);
+            if (cartItemType != null)
+            { 
+                // If NOT NULL, item is in user cart,
+                // does not need to be created, quant
+                // just needs to be updated.
+                isInCart = true;
+            }
+            return isInCart;
         }
     }
 }
