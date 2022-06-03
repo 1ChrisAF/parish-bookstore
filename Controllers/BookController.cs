@@ -70,15 +70,24 @@ namespace parish_bookstore.Controllers
             // Find user in context
             var user = _context.Users.Find(userId);
             // If user does NOT already have the item in cart, add it
-            if (user.Cart.TryAdd(item,quantity))
+            var cartItem = (CartItem)user.Cart.Where(b => b.Item == item);
+            if (cartItem == null)
             {
+                CartItem newItem = new CartItem();
+                newItem.Item = item;
+                newItem.Quantity = quantity;
+                user.Cart.Add(newItem);
                 _context.Users.Update(user);
                 _context.SaveChanges();
             }
             else
             {
                 // ELSE, add 1 to quantity
-                user.Cart[item] = quantity+1;
+                CartItem newItem = new CartItem();
+                newItem.Item = cartItem.Item;
+                newItem.Quantity = cartItem.Quantity + 1;
+                user.Cart.Remove(cartItem);
+                user.Cart.Add(newItem);
                 _context.Users.Update(user);
                 _context.SaveChanges();
             }

@@ -3,11 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace parish_bookstore.Models;
 
-public class TestUser 
+public class CartItem
 {
     [Key]
-    public int UserId {get; set;}
+    public IItemType Item {get; set;}
+    public int? Quantity {get; set;}
 
-    public List<CartItem> Cart {get; set;}
 }
-
