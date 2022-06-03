@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using parish_bookstore.Models;
 
-namespace parish_bookstore.Controllers;
+namespace parish_bookstore.Areas.Admin.Controllers;
 
+[Area("Admin")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
