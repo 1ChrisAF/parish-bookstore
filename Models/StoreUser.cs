@@ -6,6 +6,11 @@ namespace parish_bookstore.Models;
 
 public class StoreUser : IdentityUser
 {
-    [Key]
-    public int UserId {get; set;}
+    [Required]
+    [MaxLength(100)]
+    public string FirstName {get; set;} = string.Empty;
+
+    [Required]
+    [MaxLength(100)]
+    public string LastName {get; set;} = string.Empty;
 }
