@@ -9,11 +9,11 @@ using parish_bookstore.Models;
 
 namespace parish_bookstore.Controllers
 {
-    public class ItemsController : Controller
+    public class ItemController : Controller
     {
         private readonly BookstoreContext _context;
 
-        public ItemsController(BookstoreContext context)
+        public ItemController(BookstoreContext context)
         {
             _context = context;
         }
