@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using parish_bookstore.Data;
 using parish_bookstore.Models;
 
 var builder = WebApplication.CreateBuilder(args);
