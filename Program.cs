@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using parish_bookstore.Models;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("BookstoreContextConnection") ?? throw new InvalidOperationException("Connection string 'BookstoreContextConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
 builder.Services.AddDbContext<BookstoreContext>(options =>
     options.UseSqlServer(connectionString));;
@@ -11,8 +11,10 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 builder.Services.AddDefaultIdentity<StoreUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<BookstoreContext>();;
 
-// Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+// Add services to the container. Overwritten by Identity scaffolding in commit
+// a4a963defca5c169039c8bfcea88101edafd2fae. Keeping for troubleshooting.
+// var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+/*
 builder.Services.AddDbContext<BookstoreContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
@@ -20,6 +22,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<BookstoreContext>();
 builder.Services.AddControllersWithViews();
+*/
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
