@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using parish_bookstore.Models;
+using QRCoder;
 
 var builder = WebApplication.CreateBuilder(args);
     
@@ -16,7 +17,7 @@ builder.Services.AddDefaultIdentity<StoreUser>(options => options.SignIn.Require
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
-
+builder.Services.AddSingleton(new QRCodeService(new QRCodeGenerator()));
 
 // Add services to the container. Overwritten by Identity scaffolding in commit
 // a4a963defca5c169039c8bfcea88101edafd2fae. Keeping for troubleshooting.
