@@ -11,6 +11,10 @@ builder.Services.AddDbContext<BookstoreContext>(options =>
 builder.Services.AddDefaultIdentity<StoreUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<BookstoreContext>();;
 
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+builder.Services.AddControllersWithViews();
+
+
 // Add services to the container. Overwritten by Identity scaffolding in commit
 // a4a963defca5c169039c8bfcea88101edafd2fae. Keeping for troubleshooting.
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
