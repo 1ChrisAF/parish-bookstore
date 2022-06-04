@@ -3,6 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using parish_bookstore.Models;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("BookstoreContextConnection") ?? throw new InvalidOperationException("Connection string 'BookstoreContextConnection' not found.");
+
+builder.Services.AddDbContext<BookstoreContext>(options =>
+    options.UseSqlServer(connectionString));;
+
+builder.Services.AddDefaultIdentity<StoreUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<BookstoreContext>();;
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
