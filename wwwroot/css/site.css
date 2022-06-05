@@ -2,7 +2,19 @@
   font-family: "Playfair Display";
   src: url("../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
 }
-
+.outline-text {
+  text-shadow:
+		-1px -1px 0 #000,
+		1px -1px 0 #000,
+		-1px 1px 0 #000,
+		1px 1px 0 #000;
+}
+.double-size-text {
+  font-size: 2rem;
+}
+.light-blue-bg {
+  background-color: #647C96;
+}
 html {
   font-size: 14px;
 }
