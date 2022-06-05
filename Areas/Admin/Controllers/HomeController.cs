@@ -1,10 +1,12 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using parish_bookstore.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace parish_bookstore.Areas.Admin.Controllers;
 
 [Area("Admin")]
+[Authorize(Policy = "Admin")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
