@@ -27,15 +27,20 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @if (Context.User.HasClaim("IsAdmin", bool.TrueString))
-            {
-                <li class="nav-item">
-                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admins</a>
-                </li>
-            }
-            @RenderBody()
+    <div class="container-fluid">
+        <main role="main" class="row pb-3">
+            <div class="col-1">
+                @if (Context.User.HasClaim("IsAdmin", bool.TrueString))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admins</a>
+                    </li>
+                }
+                SideNav
+            </div>
+            <div class="col-11">
+                @RenderBody()
+            </div>
         </main>
     </div>
 

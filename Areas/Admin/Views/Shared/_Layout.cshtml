@@ -26,9 +26,14 @@
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
+    <div class="container-fluid">
+        <main role="main" class="row pb-3">
+            <div class="col-1">
+                SideNav
+            </div>
+            <div class="col-11">
+                @RenderBody()
+            </div>
         </main>
     </div>
 
