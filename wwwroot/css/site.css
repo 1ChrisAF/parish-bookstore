@@ -9,6 +9,8 @@
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 }
+.one-and-half-size-text {
+  font-size: 1.5rem;}
 .double-size-text {
   font-size: 2rem;
 }
@@ -24,6 +26,7 @@ html {
     font-size: 16px;
   }
 }
+
 
 html {
   position: relative;
