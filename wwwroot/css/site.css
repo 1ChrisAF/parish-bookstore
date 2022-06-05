@@ -12,6 +12,9 @@
 .center-text {
   text-align: center;
 }
+.half-size-text {
+  font-size: .5rem;
+}
 .one-and-half-size-text {
   font-size: 1.5rem;}
 .double-size-text {
