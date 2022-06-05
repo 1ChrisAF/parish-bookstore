@@ -33,6 +33,12 @@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
+            @if (Context.User.HasClaim("IsAdmin", bool.TrueString))
+            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="Admin" asp-controller="Home" asp-action="Index">Admins</a>
+                </li>
+            }
             @RenderBody()
         </main>
     </div>
