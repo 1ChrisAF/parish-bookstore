@@ -9,6 +9,9 @@
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 }
+.center-text {
+  text-align: center;
+}
 .one-and-half-size-text {
   font-size: 1.5rem;}
 .double-size-text {
@@ -16,6 +19,24 @@
 }
 .light-blue-bg {
   background-color: #647C96;
+}
+.rounded-border {
+  border-radius: 20px;
+}
+.rounded-bottom-border {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.container-outline-no-top {
+  border-bottom: 2px solid #3d3d3d;
+  border-left: 2px solid #3d3d3d;
+  border-right: 2px solid #3d3d3d;
+}
+.container-outline {
+  border: 2px solid #3d3d3d;
+}
+.italic-hover:hover {
+  font-style: italic;
 }
 html {
   font-size: 14px;

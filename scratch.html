@@ -6,203 +6,65 @@
     <meta name="viewport" content="/width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" type="image/ico" href="wwwroot/media/favicon.ico">
     <title>Parish Bookstore</title>
-    <link rel="stylesheet" href="wwwroot/css/normalize.css">
+    <link rel="stylesheet" href="wwwroot/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="wwwroot/parish_bookstore.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="wwwroot/css/site.css">
 </head>
 <body>
     <header>
-        <img id="headerLeft" src="wwwroot/media/headerImage.png" alt="cross image">
-        <h2 id="headerRight">St. Anthony Parish Bookstore</h2>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light light-blue-bg text-white rounded-bottom-border container-outline-no-top mb-3">
+            <div class="container-fluid">
+                <img class="img-fluid d-none d-md-block" src="wwwroot/media/headerImage.png" alt="cross image">
+                <a class="navbar-brand text-white outline-text double-size-text d-none d-md-block ps-3" asp-area="" asp-controller="Home" asp-action="Index">St. Anthony Parish Bookstore</a>
+                <a class="navbar-brand text-white outline-text double-size-text d-md-none" asp-area="" asp-controller="Home" asp-action="Index">St. Anthony Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    Login
+                </div>
+            </div>
+        </nav>
     </header>
-    <main>
-        <div id="stageHeader">
-            <div id="stageHeaderText">
-                <img src="wwwroot/media/headingIconLeft.png">
-                <h2>Home</h2>
-                <img src="wwwroot/media/headingIconRight.png">
+    <div class="container-fluid">
+        <main role="main" class="">
+            <div class="d-none d-md-flex row justify-content-start pb-3">
+                    <div class="col-1">
+                        <nav class="nav flex-column light-blue-bg align-middle rounded-border container-outline">
+                            <a class="nav-link text-white outline-text center-text border-bottom border-dark ms-2 me-2 italic-hover" aria-current="page" href="1">Books</a>
+                            <a class="nav-link text-white outline-text center-text border-bottom border-dark ms-2 me-2 italic-hover" href="2">Icons</a>
+                            <a class="nav-link text-white outline-text center-text border-bottom border-dark ms-2 me-2 italic-hover" href="3">Prayer Ropes</a>
+                            <a class="nav-link text-white outline-text center-text ms-2 me-2 italic-hover" href="4">Gifts</a>
+                        </nav> 
+                    </div>
+                    <div class="col-10">
+                        Main
+                    </div>
             </div>
-        </div>
-        <div id="sideNav">
-            <p class="warnHeader">ADMIN</p>
-            <nav>
-                <ul>
-                    <li class="listItem">Books</li>
-                    <li class="listItem">Icons</li>
-                    <li class="listItem">Home Altar</li>
-                    <li class="listItem">Prayer Ropes</li>
-                    <li id="lastListItem">Misc.</li>
-                </ul>
-            </nav>
-            <nav id="externalSites">
-                <p>
-                    <a class="externalSitesItem" href="https://stanthonys.nucleus.church/" title="parish website" target="_blank">Parish Site</a>
-                </p>
-                <p>
-                    Can't find what you need for here? <br><a href="https://store.ancientfaith.com/" title="ancient faith radio store" target="_blank" style="color: #545e7e">Check the Ancient Faith Radio Store!</a>
-                </p>
-            </nav>
-        </div>
-        <div id="mainStage">
-            <div class="filterList">
-                <p id="filterHeader">Filter by Category:</p>
-                <ul>
-                    <li><a href="https://www.google.com" target="_blank">CATEGORY</a></li>
-                    <li><a href="https://www.google.com" target="_blank">CATEGORY</a></li>
-                    <li><a href="https://www.google.com" target="_blank">CATEGORY</a></li>
-                    <li><a href="https://www.google.com" target="_blank">CATEGORY</a></li>
-                    <li id="currentFilterList">CATEGORY</a></li>
-                </ul>
+            <div id="mobile-view" class="d-md-none">
+                    <button class="btn btn-primary " type="button" data-bs-toggle="collapse" data-bs-target="#product-nav" aria-expanded="false" aria-controls="collapseExample">
+                        View Product Categories
+                    </button>
+                    <nav id="product-nav" class="nav collapse flex-column">
+                        <a class="nav-link text-white outline-text double-size-text light-blue-bg" aria-current="page" href="1">Books</a>
+                        <a class="nav-link text-white outline-text double-size-text light-blue-bg" href="2">Icons</a>
+                        <a class="nav-link text-white outline-text double-size-text light-blue-bg" href="3">Prayer Ropes</a>
+                        <a class="nav-link text-white outline-text double-size-text light-blue-bg" href="4">Gifts</a>
+                    </nav>
+                    <div>
+                        Product List
+                    </div>
             </div>
-            <div class="itemList">
-                <div class="itemBox">
-                    <img src="wwwroot/media/seraphim.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">$10.00</li>
-                        </ul>
-                        <a href="#" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/headerImage.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-                <div class="itemBox">
-                    <img src="wwwroot/media/default.png" class="itemImage">
-                    <div class="itemDetailsShelf">
-                        <ul>
-                            <li class="itemName">Title</li>
-                            <li class="bookAuthor">Author</li>
-                            <li class="price">price</li>
-                        </ul>
-                        <a href="" class="cartButton">Add to Cart</a> |
-                        <a href="" class="detailsButton">Details</a>
-                    </div>
-                </div>
-            </div>
-            
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; St. Anthony Parish Bookstore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
-    </main>
-    <footer>
-        &copy; 2022 - parish_bookstore
     </footer>
+    <script src="wwwroot/lib/jquery/dist/jquery.min.js"></script>
+    <script src="wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="wwwroot/js/site.js" asp-append-version="true"></script>
 </body>
