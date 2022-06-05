@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Playfair Display";
+  src: url("../fonts/Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf");
+}
+
 html {
   font-size: 14px;
 }
@@ -14,5 +19,6 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin: 0 30px 60px 30px;
+  font-family: 'Playfair Display', sans-serif;
 }
