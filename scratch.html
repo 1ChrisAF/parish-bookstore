@@ -29,7 +29,7 @@
     </header>
     <div class="container-fluid">
         <main role="main" class="">
-            <div class="d-none d-md-flex row justify-content-start pb-3">
+            <div id="desktop-large-view" class="d-none d-xxl-flex row justify-content-start pb-3">
                     <div class="col-1">
                         <nav class="nav flex-column light-blue-bg align-middle rounded-border container-outline">
                             <a class="nav-link text-white outline-text center-text border-bottom border-dark ms-2 me-2 italic-hover" aria-current="page" href="1">Books</a>
@@ -41,6 +41,24 @@
                     <div class="col-10">
                         Main
                     </div>
+            </div>
+            <div id="desktop-medium-view" class="d-none d-md-flex d-xxl-none row justify-content-start pb-3">
+                <div id="med-desktop-nav-div" class="">
+                    <div id="button-div" class="d-grid">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#product-nav" aria-expanded="false" aria-controls="collapseExample">
+                            View Product Categories
+                        </button>
+                    </div>
+                    <nav id="product-nav" class="nav collapse flex-column light-blue-bg">
+                        <a class="nav-link text-white outline-text center-text border-bottom border-dark" aria-current="page" href="1">Books</a>
+                        <a class="nav-link text-white outline-text center-text border-bottom border-dark" href="2">Icons</a>
+                        <a class="nav-link text-white outline-text center-text border-bottom border-dark" href="3">Prayer Ropes</a>
+                        <a class="nav-link text-white outline-text center-text" href="4">Gifts</a>
+                    </nav>
+                </div>
+                <div>
+                    Product List
+                </div>     
             </div>
             <div id="mobile-view" class="d-md-none">
                 <div id="mobile-nav-div" class="light-blue-bg">
