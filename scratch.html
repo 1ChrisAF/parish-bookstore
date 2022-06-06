@@ -16,7 +16,7 @@
             <div class="container-fluid">
                 <img class="img-fluid d-none d-md-block" src="wwwroot/media/headerImage.png" alt="cross image">
                 <a class="navbar-brand text-white outline-text double-size-text d-none d-md-block ps-3" asp-area="" asp-controller="Home" asp-action="Index">St. Anthony Parish Bookstore</a>
-                <a class="navbar-brand text-white outline-text double-size-text d-md-none" asp-area="" asp-controller="Home" asp-action="Index">St. Anthony Store</a>
+                <a class="navbar-brand text-white outline-text double-size-text d-md-none" asp-area="" asp-controller="Home" asp-action="Index">Parish Store</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -43,18 +43,22 @@
                     </div>
             </div>
             <div id="mobile-view" class="d-md-none">
-                    <button class="btn btn-primary " type="button" data-bs-toggle="collapse" data-bs-target="#product-nav" aria-expanded="false" aria-controls="collapseExample">
-                        View Product Categories
-                    </button>
-                    <nav id="product-nav" class="nav collapse flex-column">
-                        <a class="nav-link text-white outline-text light-blue-bg" aria-current="page" href="1">Books</a>
-                        <a class="nav-link text-white outline-text light-blue-bg" href="2">Icons</a>
-                        <a class="nav-link text-white outline-text light-blue-bg" href="3">Prayer Ropes</a>
-                        <a class="nav-link text-white outline-text light-blue-bg" href="4">Gifts</a>
-                    </nav>
-                    <div>
-                        Product List
+                <div id="mobile-nav-div" class="light-blue-bg">
+                    <div id="button-div" class="d-grid">
+                        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#product-nav" aria-expanded="false" aria-controls="collapseExample">
+                            View Product Categories
+                        </button>
                     </div>
+                    <nav id="product-nav" class="nav collapse flex-column">
+                        <a class="nav-link text-white outline-text center-text border-bottom border-dark" aria-current="page" href="1">Books</a>
+                        <a class="nav-link text-white outline-text center-text border-bottom border-dark" href="2">Icons</a>
+                        <a class="nav-link text-white outline-text center-text border-bottom border-dark" href="3">Prayer Ropes</a>
+                        <a class="nav-link text-white outline-text center-text" href="4">Gifts</a>
+                    </nav>
+                </div>
+                <div>
+                    Product List
+                </div>       
             </div>
         </main>
     </div>
