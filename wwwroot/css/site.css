@@ -44,6 +44,16 @@
 html {
   font-size: 14px;
 }
+.item-list-container {
+  clear: both;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+.item-container {
+  width: 200px;
+  padding: 10px;
+  margin: 5px;
+}
 
 @media (min-width: 768px) {
   html {
